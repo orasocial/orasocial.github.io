@@ -501,14 +501,119 @@
     z-index: -1;
   }
 
-  .about-text .section-title { margin-bottom: 1rem; }
+  .about-text .section-title { margin-bottom: 0.5rem; }
+
+  .about-eyebrow-name {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+  }
+
+  .about-roles {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1.75rem;
+  }
+
+  .about-i-see-you {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
 
   .about-text p {
     font-size: 0.975rem;
     color: var(--ink-mid);
     font-weight: 300;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.1rem;
     line-height: 1.85;
+  }
+
+  .about-brings {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+  }
+
+  .about-brings-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1rem;
+  }
+
+  .about-brings ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .about-brings ul li {
+    font-size: 0.85rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 600px) {
+    .about-brings ul { grid-template-columns: 1fr; }
+  }
+
+  .about-results {
+    margin: 1.5rem 0;
+  }
+
+  .about-results-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .about-results ul {
+    list-style: none;
+  }
+
+  .about-results ul li {
+    font-size: 0.9rem;
+    color: var(--ink-mid);
+    font-weight: 300;
+    padding: 0.3rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .about-results ul li::before {
+    content: '▶️';
+    position: absolute;
+    left: 0;
+    font-size: 0.7rem;
+    top: 0.35rem;
+  }
+
+  .about-tagline {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--ink-mid);
+    border-left: 3px solid var(--terracotta);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    line-height: 1.7;
   }
 
   /* CONTACT */
@@ -735,7 +840,7 @@
     <div class="hero-deco"></div>
     <div class="hero-content fade-in">
       <div class="hero-eyebrow">Social Media & Content Strategy</div>
-      <h1>Content with <em>intention.</em><br>Strategy with <em>impact.</em></h1>
+      <h1>Content with <em>intention.</em><br>Strategy with impact.</h1>
       <p class="hero-sub">I help brands grow through strategic social media management, scroll-stopping visuals, and campaigns designed to connect, engage, and convert.</p>
       <div class="hero-actions">
         <a href="https://forms.gle/oYc77XufwQ2epErb7" target="_blank" class="btn-primary">Book a Free Consultation →</a>
@@ -903,7 +1008,7 @@
       <div class="package-name">Starter</div>
       <div class="package-tagline">For brands just getting started online</div>
       <ul class="package-features">
-        <li>10 curated posts per month</li>
+        <li>Up to 8 posts/month</li>
         <li>Content calendar planning</li>
         <li>Basic visual design</li>
         <li>1 platform managed</li>
@@ -1002,11 +1107,42 @@
       <div class="about-img-deco"></div>
     </div>
     <div class="about-text fade-in">
-      <div class="section-label">About</div>
-      <h2 class="section-title">Designed with purpose.</h2>
-      <p>OraSocial is a social media management studio helping brands grow through intentional content, strategic planning, and scroll-stopping visuals tailored for modern businesses.</p>
-      <p>Whether you're a startup building from scratch or an established brand looking to level up your online presence — I bring structure, creativity, and strategy to every project.</p>
-      <p>If you're ready to show up consistently and attract the right audience, let's talk.</p>
+      <div class="section-label">About Me</div>
+      <div class="about-eyebrow-name">Hi, I'm Mary 👋</div>
+      <div class="about-roles">Social Media Strategist • Content Creator • Brand Builder</div>
+
+      <div class="about-i-see-you">I see you.</div>
+
+      <p>You're out there running a whole business — and somehow social media is still sitting on your to-do list, untouched. You know you need to show up online. You just don't have the time, the words, or the strategy to make it actually work.</p>
+
+      <p>That's exactly where I come in. I help busy business owners stop stressing about social media and start using it as a real growth tool. I take it completely off your plate — the strategy, the content, the posting, the engagement. All of it. So you can get back to doing what you do best.</p>
+
+      <div class="about-brings">
+        <div class="about-brings-title">With 4+ years of experience, here's what I bring:</div>
+        <ul>
+          <li>✨ Content that speaks to your audience</li>
+          <li>📊 Strategy backed by data, not guesswork</li>
+          <li>🔥 Storytelling that converts scrollers</li>
+          <li>🎯 Full social media management</li>
+          <li>📅 Consistent posting, zero blank pages</li>
+          <li>💬 Community engagement that builds trust</li>
+          <li>📈 Monthly reports — always know what's working</li>
+          <li>🕐 Save 10+ hours a week — for good</li>
+        </ul>
+      </div>
+
+      <div class="about-results">
+        <div class="about-results-title">I've helped businesses:</div>
+        <ul>
+          <li>Grow their presence from zero</li>
+          <li>Generate leads directly from social media</li>
+          <li>Build a consistent identity across all platforms</li>
+          <li>Save 10+ hours a week by handing social media off completely</li>
+        </ul>
+      </div>
+
+      <p class="about-tagline">Because your brand deserves more than attention. It deserves impact.</p>
+
       <a href="https://forms.gle/oYc77XufwQ2epErb7" target="_blank" class="btn-primary">Book a Free Consultation →</a>
     </div>
   </div>
