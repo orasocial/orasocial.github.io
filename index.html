@@ -326,100 +326,7 @@
     line-height: 1.7;
     font-weight: 300;
   }
-<!-- PROCESS -->
-<section id="process">
-  <div class="fade-in">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">My simple process</h2>
-    <p class="section-sub">From discovery to results — here's exactly how we work together.</p>
-  </div>
-  <div class="process-flow fade-in">
 
-    <!-- Column 1 -->
-    <div class="process-col">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <div class="step-body">
-          <div class="step-title">Discovery call</div>
-          <div class="step-desc">We get to know your business, goals, and target audience.</div>
-        </div>
-      </div>
-      <div class="process-arrow down">↓</div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <div class="step-body">
-          <div class="step-title">Contract signing</div>
-          <div class="step-desc">We finalize the agreement, scope of work, and pricing.</div>
-        </div>
-      </div>
-      <div class="process-arrow down">↓</div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <div class="step-body">
-          <div class="step-title">Client onboarding</div>
-          <div class="step-desc">We collect your brand assets and account access.</div>
-        </div>
-      </div>
-      <div class="process-arrow right">→</div>
-    </div>
-
-    <!-- Column 2 -->
-    <div class="process-col reverse">
-      <div class="process-step">
-        <div class="step-num">6</div>
-        <div class="step-body">
-          <div class="step-title">Content approval</div>
-          <div class="step-desc">You review everything. We revise until you're happy.</div>
-        </div>
-      </div>
-      <div class="process-arrow down">↓</div>
-      <div class="process-step">
-        <div class="step-num">5</div>
-        <div class="step-body">
-          <div class="step-title">Content creation</div>
-          <div class="step-desc">We design all your posts, captions, and graphics.</div>
-        </div>
-      </div>
-      <div class="process-arrow down">↓</div>
-      <div class="process-step">
-        <div class="step-num">4</div>
-        <div class="step-body">
-          <div class="step-title">Strategy presentation</div>
-          <div class="step-desc">We present a custom social media plan for your brand.</div>
-        </div>
-      </div>
-      <div class="process-arrow right">→</div>
-    </div>
-
-    <!-- Column 3 -->
-    <div class="process-col">
-      <div class="process-step">
-        <div class="step-num">7</div>
-        <div class="step-body">
-          <div class="step-title">Content scheduling</div>
-          <div class="step-desc">We schedule all content at the best times for engagement.</div>
-        </div>
-      </div>
-      <div class="process-arrow down">↓</div>
-      <div class="process-step">
-        <div class="step-num">8</div>
-        <div class="step-body">
-          <div class="step-title">Strategy execution</div>
-          <div class="step-desc">We publish your content and monitor performance in real time.</div>
-        </div>
-      </div>
-      <div class="process-arrow down">↓</div>
-      <div class="process-step">
-        <div class="step-num">9</div>
-        <div class="step-body">
-          <div class="step-title">Analytics report</div>
-          <div class="step-desc">We send a monthly report showing what worked and what we'll improve.</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
   /* PACKAGES */
   .packages-grid {
     display: grid;
@@ -717,105 +624,95 @@
     opacity: 1;
     transform: translateY(0);
   }
- /* PROCESS */
-#process {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 5rem 2rem;
-}
 
-.process-flow {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0;
-  margin-top: 3rem;
-  position: relative;
-}
-
-.process-col {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  position: relative;
-}
-
-.process-col.reverse {
-  flex-direction: column-reverse;
-}
-
-.process-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  background: var(--warm-white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem;
-  margin: 0 0.5rem;
-  transition: border-color 0.2s, transform 0.2s;
-}
-
-.process-step:hover {
-  border-color: var(--terracotta);
-  transform: translateY(-2px);
-}
-
-.step-num {
-  min-width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--terracotta);
-  color: white;
-  font-size: 0.85rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.step-title {
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--ink);
-  margin-bottom: 0.3rem;
-}
-
-.step-desc {
-  font-size: 0.82rem;
-  color: var(--ink-muted);
-  line-height: 1.5;
-}
-
-.process-arrow {
-  text-align: center;
-  color: var(--terracotta);
-  font-size: 1.2rem;
-  padding: 0.4rem 0;
-  opacity: 0.6;
-}
-
-.process-arrow.right {
-  position: absolute;
-  bottom: 0;
-  right: -0.6rem;
-  padding: 0;
-  font-size: 1.4rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-@media (max-width: 768px) {
+  /* PROCESS */
+  #process {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
   .process-flow {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    margin-top: 3rem;
+    position: relative;
+  }
+  .process-col {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
   }
   .process-col.reverse {
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+  .process-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin: 0 0.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .process-step:hover {
+    border-color: var(--terracotta);
+    transform: translateY(-2px);
+  }
+  .step-num {
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-title {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .step-desc {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    line-height: 1.5;
+  }
+  .process-arrow {
+    text-align: center;
+    color: var(--terracotta);
+    font-size: 1.2rem;
+    padding: 0.4rem 0;
+    opacity: 0.6;
   }
   .process-arrow.right {
-    display: none;
+    position: absolute;
+    bottom: 0;
+    right: -0.6rem;
+    padding: 0;
+    font-size: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
-}
+  @media (max-width: 768px) {
+    .process-flow {
+      grid-template-columns: 1fr;
+    }
+    .process-col.reverse {
+      flex-direction: column;
+    }
+    .process-arrow.right {
+      display: none;
+    }
+  }
 </style>
 </head>
 <body>
@@ -825,6 +722,7 @@
   <a href="#" class="nav-logo">Ora<span>Social</span></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
     <li><a href="#works">Works</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact" class="nav-cta">Work With Me</a></li>
@@ -837,7 +735,7 @@
     <div class="hero-deco"></div>
     <div class="hero-content fade-in">
       <div class="hero-eyebrow">Social Media & Content Strategy</div>
-      <h1>Content with <em>intention.</em><br>Strategy with <em>impact.</em> </h1>
+      <h1>Content with <em>intention.</em><br>Strategy with impact.</h1>
       <p class="hero-sub">I help brands grow through strategic social media management, scroll-stopping visuals, and campaigns designed to connect, engage, and convert.</p>
       <div class="hero-actions">
         <a href="https://forms.gle/oYc77XufwQ2epErb7" target="_blank" class="btn-primary">Book a Free Consultation →</a>
@@ -901,6 +799,97 @@
     </div>
   </div>
 </div>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="fade-in">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">My simple process</h2>
+    <p class="section-sub">From discovery to results — here's exactly how we work together.</p>
+  </div>
+  <div class="process-flow fade-in">
+    <!-- Column 1 -->
+    <div class="process-col">
+      <div class="process-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Discovery call</div>
+          <div class="step-desc">We get to know your business, goals, and target audience.</div>
+        </div>
+      </div>
+      <div class="process-arrow down">↓</div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Contract signing</div>
+          <div class="step-desc">We finalize the agreement, scope of work, and pricing.</div>
+        </div>
+      </div>
+      <div class="process-arrow down">↓</div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Client onboarding</div>
+          <div class="step-desc">We collect your brand assets and account access.</div>
+        </div>
+      </div>
+      <div class="process-arrow right">→</div>
+    </div>
+    <!-- Column 2 -->
+    <div class="process-col reverse">
+      <div class="process-step">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <div class="step-title">Content approval</div>
+          <div class="step-desc">You review everything. We revise until you're happy.</div>
+        </div>
+      </div>
+      <div class="process-arrow down">↓</div>
+      <div class="process-step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Content creation</div>
+          <div class="step-desc">We design all your posts, captions, and graphics.</div>
+        </div>
+      </div>
+      <div class="process-arrow down">↓</div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Strategy presentation</div>
+          <div class="step-desc">We present a custom social media plan for your brand.</div>
+        </div>
+      </div>
+      <div class="process-arrow right">→</div>
+    </div>
+    <!-- Column 3 -->
+    <div class="process-col">
+      <div class="process-step">
+        <div class="step-num">7</div>
+        <div class="step-body">
+          <div class="step-title">Content scheduling</div>
+          <div class="step-desc">We schedule all content at the best times for engagement.</div>
+        </div>
+      </div>
+      <div class="process-arrow down">↓</div>
+      <div class="process-step">
+        <div class="step-num">8</div>
+        <div class="step-body">
+          <div class="step-title">Strategy execution</div>
+          <div class="step-desc">We publish your content and monitor performance in real time.</div>
+        </div>
+      </div>
+      <div class="process-arrow down">↓</div>
+      <div class="process-step">
+        <div class="step-num">9</div>
+        <div class="step-body">
+          <div class="step-title">Analytics report</div>
+          <div class="step-desc">We send a monthly report showing what worked and what we'll improve.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PACKAGES -->
 <section id="packages">
