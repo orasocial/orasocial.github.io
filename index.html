@@ -68,7 +68,7 @@
   .nav-links {
     display: flex;
     gap: 2rem;
-    list-style: none;
+    list-: none;
   }
 
   .nav-links a {
@@ -136,7 +136,7 @@
   }
 
   .hero h1 em {
-    font-style: italic;
+    font-: italic;
     color: var(--terracotta);
   }
 
@@ -386,7 +386,7 @@
   }
 
   .package-features {
-    list-style: none;
+    list-: none;
     margin-bottom: 1.5rem;
   }
 
@@ -526,7 +526,7 @@
     font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: 700;
-    font-style: italic;
+    font-: italic;
     color: var(--ink);
     margin-bottom: 1rem;
   }
@@ -557,7 +557,7 @@
   }
 
   .about-brings ul {
-    list-style: none;
+    list-: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.6rem;
@@ -588,7 +588,7 @@
   }
 
   .about-results ul {
-    list-style: none;
+    list-: none;
   }
 
   .about-results ul li {
@@ -1302,6 +1302,36 @@
     body { padding: 60px 16px; }
     .grid { grid-template-columns: 1fr; }
   }
+ .c-eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A96E; font-weight: 500; margin-bottom: 14px; }
+.c-heading { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 400; line-height: 1.15; color: #FAF8F4; margin-bottom: 16px; }
+.c-heading em { font-style: italic; color: #C9A96E; }
+.c-desc { font-size: 14px; color: #9B9488; line-height: 1.75; margin-bottom: 36px; max-width: 380px; }
+.c-perks { display: flex; flex-direction: column; gap: 13px; margin-bottom: 40px; }
+.c-perk { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #D3D1C7; }
+.c-perk-dot { width: 6px; height: 6px; border-radius: 50%; background: #C9A96E; flex-shrink: 0; }
+.c-book-btn { display: inline-flex; align-items: center; justify-content: center; background: #C9A96E; color: #1A1714; border: none; border-radius: 10px; padding: 15px 28px; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; width: 100%; text-align: center; }
+.c-book-btn:hover { background: #B8924E; transform: translateY(-1px); }
+.c-form { display: flex; flex-direction: column; gap: 16px; }
+.c-field { display: flex; flex-direction: column; gap: 7px; }
+.c-label { font-size: 12px; color: #9B9488; letter-spacing: 0.03em; }
+.c-input, .c-select, .c-textarea { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px 14px; font-size: 14px; color: #FAF8F4; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s ease; width: 100%; }
+.c-input:focus, .c-select:focus, .c-textarea:focus { border-color: #C9A96E; }
+.c-input::placeholder, .c-textarea::placeholder { color: #444441; }
+.c-select { color: #9B9488; cursor: pointer; }
+.c-select option { background: #1A1714; color: #FAF8F4; }
+.c-textarea { resize: none; height: 100px; }
+.c-submit { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.c-submit-btn { background: #C9A96E; color: #1A1714; border: none; border-radius: 10px; padding: 15px 24px; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: background 0.2s ease, transform 0.15s ease; width: 100%; text-align: center; }
+.c-submit-btn:hover { background: #B8924E; transform: translateY(-1px); }
+.c-note { font-size: 11px; color: #444441; text-align: center; }
+.thank-you { display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; gap: 16px; }
+.thank-you.visible { display: flex; }
+.ty-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(201,169,110,0.15); display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.ty-heading { font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; color: #FAF8F4; }
+.ty-heading em { font-style: italic; color: #C9A96E; }
+.ty-desc { font-size: 14px; color: #9B9488; line-height: 1.7; max-width: 320px; }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+@media (max-width: 700px) { .contact-inner { grid-template-columns: 1fr; gap: 40px; } }
 </style>
 </head>
 <body>
@@ -1742,50 +1772,58 @@
 </div>
 
 <!-- CONTACT -->
-<div id="contact" class="full-section">
-  <div class="inner">
-    <div class="fade-in">
-      <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Let's work together</h2>
-      <p class="section-sub">Fill out the form below and I'll get back to you within 24 hours. Let's refine your brand.</p>
+<section id="contact" class="full-section" style="background:#1A1714; border-radius:20px; padding:64px 56px; margin: 0 24px 60px;">
+  <div class="contact-inner">
+    <div>
+      <p class="c-eyebrow">Get in touch</p>
+      <h2 class="c-heading">Let's build something <em>worth sharing.</em></h2>
+      <p class="c-desc">Fill out the form and I'll get back to you within 24 hours. No pressure, no hard sell — just a conversation about your brand.</p>
+      <div class="c-perks">
+        <div class="c-perk"><span class="c-perk-dot"></span>Free consultation call included</div>
+        <div class="c-perk"><span class="c-perk-dot"></span>Response within 24 hours</div>
+        <div class="c-perk"><span class="c-perk-dot"></span>No spam, ever</div>
+        <div class="c-perk"><span class="c-perk-dot"></span>Custom plan for your brand</div>
+      </div>
+      <a href="https://forms.gle/oYc77XufwQ2epErb7" target="_blank" class="c-book-btn">Book a free consultation ✦</a>
     </div>
-    <form class="contact-form fade-in" action="https://formsubmit.co/orasocialsmm@gmail.com" method="POST">
-      <!-- Hidden settings -->
-      <input type="hidden" name="_subject" value="New Inquiry — OraSocial">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://orasocial.github.io/thank-you.html">
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" name="name" placeholder="e.g. Maria Santos">
+    <div>
+      <div class="c-form" id="contactForm">
+        <div class="c-field">
+          <label class="c-label">Your name</label>
+          <input class="c-input" type="text" id="nameInput" placeholder="Your full name" />
         </div>
-        <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" name="email" placeholder="you@example.com" required>
+        <div class="c-field">
+          <label class="c-label">Email address</label>
+          <input class="c-input" type="email" id="emailInput" placeholder="hello@yourbrand.com" />
+        </div>
+        <div class="c-field">
+          <label class="c-label">What do you need help with?</label>
+          <select class="c-select" id="serviceInput">
+            <option value="" disabled selected>Select a service...</option>
+            <option>Social Media Strategy & Management</option>
+            <option>Content Creation & Visual Design</option>
+            <option>Campaign Strategy & Execution</option>
+            <option>Virtual Assistant & Business Support</option>
+            <option>Not sure yet — let's talk</option>
+          </select>
+        </div>
+        <div class="c-field">
+          <label class="c-label">Message (optional)</label>
+          <textarea class="c-textarea" id="messageInput" placeholder="Tell me a little about your brand..."></textarea>
+        </div>
+        <div class="c-submit">
+          <button class="c-submit-btn" onclick="handleSubmit()">Send inquiry — it's free ✦</button>
+          <p class="c-note">I respond within 24 hours. No spam, ever.</p>
         </div>
       </div>
-      <div class="form-group">
-        <label>What do you need help with? *</label>
-        <select name="service" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:0.75rem 1rem; font-size:0.9rem; color:var(--warm-white); font-family:var(--font-body); outline:none; cursor:pointer; width:100%;">
-          <option value="" style="background:#1A1410;">Select a service...</option>
-          <option value="smm" style="background:#1A1410;">Social Media Strategy & Management</option>
-          <option value="content" style="background:#1A1410;">Content Creation & Visual Design</option>
-          <option value="campaign" style="background:#1A1410;">Campaign Strategy & Execution</option>
-          <option value="va" style="background:#1A1410;">Virtual Assistant & Business Support</option>
-          <option value="other" style="background:#1A1410;">Not sure yet — let's talk</option>
-        </select>
+      <div class="thank-you" id="thankYou">
+        <div class="ty-icon">✦</div>
+        <h3 class="ty-heading">You're all set, <em>let's talk.</em></h3>
+        <p class="ty-desc">Thanks for reaching out! I'll be in touch within 24 hours to discuss your brand and how we can grow it together.</p>
       </div>
-      <div class="form-group">
-        <label>Message (optional)</label>
-        <textarea name="message" placeholder="Tell me a bit about your brand and what you're looking for..."></textarea>
-      </div>
-      <button type="submit" class="form-submit">Send Inquiry — It's Free ✦</button>
-      <p style="font-size:0.78rem; color:rgba(250,247,242,0.35); text-align:center; margin-top:1rem;">I respond within 24 hours. No spam, ever.</p>
-    </form>
+    </div>
   </div>
-</div>
-
+</section>
 <!-- FOOTER -->
 <footer>
   <p>© 2026 OraSocial — <a href="mailto:orasocialsmm@email.com">orasocialsmm@email.com</a></p>
@@ -1887,6 +1925,19 @@ function closeModal(e) {
   });
 }
 </script>
-
+<script>
+function handleSubmit() {
+  var name = document.getElementById('nameInput').value.trim();
+  var email = document.getElementById('emailInput').value.trim();
+  var service = document.getElementById('serviceInput').value;
+  if (!name || !email || !service) {
+    alert('Please fill in your name, email, and select a service.');
+    return;
+  }
+  window.open('https://forms.gle/oYc77XufwQ2epErb7', '_blank');
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('thankYou').classList.add('visible');
+}
+</script>
 </body>
 </html>
