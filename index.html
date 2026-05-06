@@ -911,6 +911,136 @@
       display: none;
     }
   }
+ /* PACKAGE PRICE */
+.package-price {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.package-price span {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+}
+.package-ideal {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.package-btn {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1.5px solid var(--terracotta);
+  background: transparent;
+  color: var(--terracotta);
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+.package-btn:hover {
+  background: var(--terracotta);
+  color: white;
+}
+.featured-btn {
+  background: var(--terracotta);
+  color: white;
+}
+.featured-btn:hover {
+  opacity: 0.85;
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.modal-overlay.active {
+  display: flex;
+}
+.modal-box {
+  background: var(--warm-white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--ink-muted);
+}
+.modal-close:hover { color: var(--ink); }
+.modal-box h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.modal-box .modal-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  margin-bottom: 0.5rem;
+}
+.modal-box .modal-desc {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+.modal-box ul {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+.modal-box ul li {
+  font-size: 0.875rem;
+  color: var(--ink-mid);
+  padding: 0.45rem 0;
+  padding-left: 1.3rem;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.modal-box ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--terracotta);
+  font-weight: 600;
+}
+.modal-cta {
+  display: block;
+  text-align: center;
+  padding: 0.9rem;
+  background: var(--terracotta);
+  color: white;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+.modal-cta:hover { opacity: 0.85; }
 </style>
 </head>
 <body>
@@ -1091,56 +1221,85 @@
 </section>
 
 <!-- PACKAGES -->
-<section id="packages">
-  <div class="fade-in">
-    <div class="section-label">Pricing</div>
-    <h2 class="section-title">Social media packages</h2>
-    <p class="section-sub">Choose a plan that fits your brand's goals and growth stage.</p>
-  </div>
-  <div class="packages-grid">
-    <div class="package-card fade-in">
-      <div class="package-name">Starter</div>
-      <div class="package-tagline">For brands just getting started online</div>
-      <ul class="package-features">
-        <li>Up to 8 posts/month</li>
-        <li>Content calendar planning</li>
-        <li>Basic visual design</li>
-        <li>1 platform managed</li>
-        <li>Monthly performance summary</li>
-      </ul>
-      <a href="https://forms.gle/oYc77XufwQ2epErb7" target="_blank" class="btn-outline" style="display:block; text-align:center; border-radius:10px; padding: 0.75rem;">Get Started</a>
+<!-- PACKAGES -->
+<div id="packages" class="full-section" style="background: var(--cream);">
+  <div class="inner">
+    <div class="fade-in">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Social media packages</h2>
+      <p class="section-sub">Transparent pricing. No hidden fees. Pick what fits your brand.</p>
     </div>
-    <div class="package-card featured fade-in">
-      <div class="package-badge">Most Popular</div>
-      <div class="package-name">Growth</div>
-      <div class="package-tagline">For brands ready to scale their presence</div>
-      <ul class="package-features">
-        <li>Up to 16 posts/month</li>
-        <li>Full content strategy</li>
-        <li>Custom branded visuals</li>
-        <li>Up to 2 platforms</li>
-        <li>Engagement & community management</li>
-        <li>Bi-weekly performance report</li>
-      </ul>
-      <a href="https://forms.gle/oYc77XufwQ2epErb7" target="_blank" class="btn-primary" style="display:block; text-align:center; border-radius:10px; padding: 0.75rem;">Get Started</a>
-    </div>
-    <div class="package-card fade-in">
-      <div class="package-name">Premium</div>
-      <div class="package-tagline">For businesses needing full-service support</div>
-      <ul class="package-features">
-        <li>Unlimited posts</li>
-        <li>Campaign strategy & execution</li>
-        <li>Premium visual design + reels</li>
-        <li>Up to 3 platforms</li>
-        <li>Full community management</li>
-        <li>Weekly reporting & strategy calls</li>
-      </ul>
-      <a href="https://forms.gle/oYc77XufwQ2epErb7" target="_blank" class="btn-outline" style="display:block; text-align:center; border-radius:10px; padding: 0.75rem;">Get Started</a>
-    </div>
-  </div>
-  <p style="text-align:center; font-size:0.8rem; color:var(--ink-muted); margin-top:1.25rem;">All packages include a <strong>free consultation call</strong> to ensure the best fit. Custom pricing available for VA services.</p>
-</section>
+    <div class="packages-grid fade-in">
 
+      <!-- Starter -->
+      <div class="package-card">
+        <div class="package-name">Starter</div>
+        <div class="package-price">$429<span>/month</span></div>
+        <div class="package-tagline">For brands that need a consistent and professional presence.</div>
+        <ul class="package-features">
+          <li>10 curated posts per month</li>
+          <li>Caption writing</li>
+          <li>Basic content planning</li>
+          <li>Custom-designed visuals</li>
+          <li>1 revision per post</li>
+          <li>Monthly content overview</li>
+          <li>1 platform (IG & FB)</li>
+        </ul>
+        <p class="package-ideal">✦ Ideal for maintaining an active and polished social presence.</p>
+        <button class="package-btn" onclick="openModal('starter')">Get Started</button>
+      </div>
+
+      <!-- Growth -->
+      <div class="package-card featured">
+        <div class="package-badge">⭐ Most Recommended</div>
+        <div class="package-name">Growth</div>
+        <div class="package-price">$799<span>/month</span></div>
+        <div class="package-tagline">For brands ready to grow and engage their audience.</div>
+        <ul class="package-features">
+          <li>15 strategic posts per month</li>
+          <li>Content calendar (planned monthly)</li>
+          <li>Caption + hashtag strategy</li>
+          <li>Custom-designed visuals</li>
+          <li>2 revisions per post</li>
+          <li>Monthly performance check-in</li>
+          <li>Content campaign execution</li>
+          <li>1–2 platforms (IG & FB or LI)</li>
+        </ul>
+        <p class="package-ideal">✦ Designed to increase engagement and build a stronger brand presence.</p>
+        <button class="package-btn featured-btn" onclick="openModal('growth')">Get Started</button>
+      </div>
+
+      <!-- Premium -->
+      <div class="package-card">
+        <div class="package-name">Premium</div>
+        <div class="package-price">$1,199<span>/month</span></div>
+        <div class="package-tagline">For brands that want full social media support and strategy.</div>
+        <ul class="package-features">
+          <li>20–25 high-quality posts per month</li>
+          <li>Full content strategy & direction</li>
+          <li>Advanced visual design system</li>
+          <li>Campaign planning & execution</li>
+          <li>Content calendar + captions + hashtags</li>
+          <li>Priority revisions & support</li>
+          <li>Monthly performance insights</li>
+          <li>2–3 platforms (IG, FB, or LI)</li>
+        </ul>
+        <p class="package-ideal">✦ A complete solution for brands ready to scale and stand out.</p>
+        <button class="package-btn" onclick="openModal('premium')">Get Started</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PACKAGE MODAL -->
+<div id="pkg-modal" class="modal-overlay" onclick="closeModal(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+    <a href="#contact" class="modal-cta" onclick="document.getElementById('pkg-modal').classList.remove('active')">Book This Package ✦</a>
+  </div>
+</div>
 <!-- WORKS -->
 <div style="background: var(--warm-white); max-width:100%;">
   <section id="works">
@@ -1357,6 +1516,73 @@ document.querySelectorAll('.fade-in').forEach((el, i) => {
   el.style.transitionDelay = `${(i % 4) * 0.08}s`;
   obs.observe(el);
 });
+ const packages = {
+  starter: {
+    name: 'Starter',
+    price: '$429/month',
+    desc: 'For brands that need a consistent and professional presence.',
+    features: [
+      '10 curated posts per month',
+      'Caption writing',
+      'Basic content planning',
+      'Custom-designed visuals',
+      '1 revision per post',
+      'Monthly content overview',
+      '1 platform (IG & FB)'
+    ],
+    ideal: 'Ideal for maintaining an active and polished social presence.'
+  },
+  growth: {
+    name: 'Growth',
+    price: '$799/month',
+    desc: 'For brands ready to grow and engage their audience.',
+    features: [
+      '15 strategic posts per month',
+      'Content calendar (planned monthly)',
+      'Caption + hashtag strategy',
+      'Custom-designed visuals',
+      '2 revisions per post',
+      'Monthly performance check-in',
+      'Content campaign execution',
+      '1–2 platforms (IG & FB or LI)'
+    ],
+    ideal: 'Designed to increase engagement and build a stronger brand presence.'
+  },
+  premium: {
+    name: 'Premium',
+    price: '$1,199/month',
+    desc: 'For brands that want full social media support and strategy.',
+    features: [
+      '20–25 high-quality posts per month',
+      'Full content strategy & direction',
+      'Advanced visual design system',
+      'Campaign planning & execution',
+      'Content calendar + captions + hashtags',
+      'Priority revisions & support',
+      'Monthly performance insights',
+      '2–3 platforms (IG, FB, or LI)'
+    ],
+    ideal: 'A complete solution for brands ready to scale and stand out.'
+  }
+};
+
+function openModal(pkg) {
+  const p = packages[pkg];
+  document.getElementById('modal-content').innerHTML = `
+    <h3>${p.name}</h3>
+    <div class="modal-price">${p.price}</div>
+    <div class="modal-desc">${p.desc}</div>
+    <ul>${p.features.map(f => `<li>${f}</li>`).join('')}</ul>
+    <p style="font-size:0.82rem; font-style:italic; color:var(--ink-muted);">✦ ${p.ideal}</p>
+  `;
+  document.getElementById('pkg-modal').classList.add('active');
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('pkg-modal')) {
+    document.getElementById('pkg-modal').classList.remove('active');
+  }
+}
 </script>
 
 </body>
