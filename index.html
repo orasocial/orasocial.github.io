@@ -1298,20 +1298,25 @@
       <h2 class="section-title">Let's work together</h2>
       <p class="section-sub">Fill out the form below and I'll get back to you within 24 hours. Let's refine your brand.</p>
     </div>
-    <div class="contact-form fade-in">
+    <form class="contact-form fade-in" action="https://formsubmit.co/orasocialsmm@gmail.com" method="POST">
+      <!-- Hidden settings -->
+      <input type="hidden" name="_subject" value="New Inquiry — OraSocial">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://orasocial.github.io">
+
       <div class="form-row">
         <div class="form-group">
           <label>Your Name</label>
-          <input type="text" placeholder="e.g. Maria Santos">
+          <input type="text" name="name" placeholder="e.g. Maria Santos">
         </div>
         <div class="form-group">
           <label>Email Address *</label>
-          <input type="email" placeholder="you@example.com">
+          <input type="email" name="email" placeholder="you@example.com" required>
         </div>
       </div>
       <div class="form-group">
         <label>What do you need help with? *</label>
-        <select style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:0.75rem 1rem; font-size:0.9rem; color:var(--warm-white); font-family:var(--font-body); outline:none; cursor:pointer;">
+        <select name="service" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:10px; padding:0.75rem 1rem; font-size:0.9rem; color:var(--warm-white); font-family:var(--font-body); outline:none; cursor:pointer; width:100%;">
           <option value="" style="background:#1A1410;">Select a service...</option>
           <option value="smm" style="background:#1A1410;">Social Media Strategy & Management</option>
           <option value="content" style="background:#1A1410;">Content Creation & Visual Design</option>
@@ -1322,14 +1327,13 @@
       </div>
       <div class="form-group">
         <label>Message (optional)</label>
-        <textarea placeholder="Tell me a bit about your brand and what you're looking for..."></textarea>
+        <textarea name="message" placeholder="Tell me a bit about your brand and what you're looking for..."></textarea>
       </div>
-      <a href="mailto:orasocialsmm@gmail.com" target="_blank">
-        <button class="form-submit">Send Inquiry — It's Free ✦</button>
-      </a>
+      <button type="submit" class="form-submit">Send Inquiry — It's Free ✦</button>
       <p style="font-size:0.78rem; color:rgba(250,247,242,0.35); text-align:center; margin-top:1rem;">I respond within 24 hours. No spam, ever.</p>
-    </div>
+    </form>
   </div>
+</div>  </div>
 </div>
 
 <!-- FOOTER -->
