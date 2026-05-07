@@ -1332,6 +1332,20 @@
 .ty-desc { font-size: 14px; color: #9B9488; line-height: 1.7; max-width: 320px; }
 .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 @media (max-width: 700px) { .contact-inner { grid-template-columns: 1fr; gap: 40px; } }
+ body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 16px; /* mobile default */
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px; /* larger on PC */
+  }
+}
 </style>
 </head>
 <body>
