@@ -167,9 +167,14 @@
   .reel-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; background: rgba(255,255,255,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--terracotta); transition: transform 0.2s, background 0.2s; pointer-events: none; }
   .reel-thumb:hover .reel-play-btn { transform: translate(-50%, -50%) scale(1.12); background: white; }
 
-  /* FLIPBOOK MODAL — display controlled purely by CSS class, no inline display:none */
+  /* FLIPBOOK MODAL */
   #flipbook-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem; }
   #flipbook-modal.active { display: flex; }
+
+  /* Load More Button */
+  .load-more-wrap { text-align: center; margin-top: 2.5rem; }
+  .load-more-btn { background: transparent; border: 1.5px solid var(--terracotta); color: var(--terracotta); padding: 0.75rem 2.5rem; border-radius: 100px; font-size: 0.9rem; font-weight: 500; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; letter-spacing: 0.02em; }
+  .load-more-btn:hover { background: var(--terracotta); color: white; transform: translateY(-1px); }
 
   #process { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
   .process-flow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-top: 3rem; position: relative; }
@@ -398,15 +403,16 @@
     </div>
 
     <div class="works-filters fade-in">
-      <button class="filter-btn active" onclick="filterWorks('all')">All</button>
-      <button class="filter-btn" onclick="filterWorks('graphics')">Graphics</button>
-      <button class="filter-btn" onclick="filterWorks('carousel')">Carousel</button>
-      <button class="filter-btn" onclick="filterWorks('branding')">Branding</button>
-      <button class="filter-btn" onclick="filterWorks('reels')">Reels</button>
+      <button class="filter-btn active" onclick="filterWorks('all', this)">All</button>
+      <button class="filter-btn" onclick="filterWorks('graphics', this)">Graphics</button>
+      <button class="filter-btn" onclick="filterWorks('carousel', this)">Carousel</button>
+      <button class="filter-btn" onclick="filterWorks('branding', this)">Branding</button>
+      <button class="filter-btn" onclick="filterWorks('reels', this)">Reels</button>
     </div>
 
     <div class="works-grid">
 
+      <!-- GRAPHICS: Lunévia -->
       <div class="work-card fade-in" data-category="graphics">
         <div class="work-item"><img src="Glunevia1.png" alt="Lunévia Collection Launch"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Lunévia — Collection Launch</div><div class="work-overlay-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Lunévia — Collection Launch</div><div class="work-caption-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div>
@@ -424,6 +430,7 @@
         <div class="work-caption"><div class="work-caption-title">Lunévia — Radiance & Grace</div><div class="work-caption-desc">Lifestyle content strategy connecting the brand to real, everyday moments.</div></div>
       </div>
 
+      <!-- GRAPHICS: Liliya -->
       <div class="work-card fade-in" data-category="graphics">
         <div class="work-item"><img src="Liliya1.png" alt="Liliya 1"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Liliya Personalised Jewels</div><div class="work-overlay-desc">Elegant graphics designed to showcase personalised jewelry and drive product engagement.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Liliya Personalised Jewels</div><div class="work-caption-desc">Elegant graphics to showcase personalised jewelry.</div></div>
@@ -449,6 +456,7 @@
         <div class="work-caption"><div class="work-caption-title">Liliya Personalised Jewels</div><div class="work-caption-desc">Elegant graphics to showcase personalised jewelry.</div></div>
       </div>
 
+      <!-- GRAPHICS: Finance -->
       <div class="work-card fade-in" data-category="graphics">
         <div class="work-item"><img src="Finance1.png" alt="Finance 1"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Financial Origins — Editorial</div><div class="work-overlay-desc">Educational content designed to make complex financial history visually compelling and shareable.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Financial Origins — Editorial</div><div class="work-caption-desc">Making complex financial history visually compelling.</div></div>
@@ -462,6 +470,7 @@
         <div class="work-caption"><div class="work-caption-title">Financial Origins — Editorial</div><div class="work-caption-desc">Making complex financial history visually compelling.</div></div>
       </div>
 
+      <!-- CAROUSEL -->
       <div class="work-card fade-in" data-category="carousel">
         <a href="https://www.instagram.com/p/DX9ZSLOEuIr/" target="_blank" class="reel-thumb-link">
           <div class="work-item reel-thumb">
@@ -474,7 +483,7 @@
         <div class="work-caption"><div class="work-caption-title">OraSocial — Carousel Post</div><div class="work-caption-desc">Strategic carousel content to educate and grow organic reach on Instagram.</div></div>
       </div>
 
-      <!-- BRANDING: Amar Coffee Flipbook — onclick triggers openFlipbook() -->
+      <!-- BRANDING -->
       <div class="work-card fade-in" data-category="branding">
         <div class="work-item reel-thumb" onclick="openFlipbook()" style="cursor:pointer;">
           <img src="Amarmenu1.png" alt="Amar Coffee Co. Menu">
@@ -485,6 +494,7 @@
         <div class="work-caption"><div class="work-caption-title">Amar Coffee Co. — Brand Menu</div><div class="work-caption-desc">A full 6-page digital menu. Tap to browse all pages.</div></div>
       </div>
 
+      <!-- REELS -->
       <div class="work-card fade-in" data-category="reels">
         <a href="https://youtube.com/shorts/5RN-wIeJGEI" target="_blank" class="reel-thumb-link">
           <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
@@ -517,7 +527,7 @@
           </div>
         </a>
       </div>
-      <div class="work-card fade-in reels-extra" data-category="reels" style="display:none;">
+      <div class="work-card fade-in" data-category="reels">
         <a href="https://youtube.com/shorts/9oh31nl9mTg" target="_blank" class="reel-thumb-link">
           <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
             <img src="https://i.ytimg.com/vi/9oh31nl9mTg/hqdefault.jpg" alt="Reel 5" style="width:100%;height:100%;object-fit:cover;">
@@ -528,14 +538,15 @@
 
     </div>
 
-    <div id="reels-load-more" style="display:none; text-align:center; margin-top:2rem;">
-      <button onclick="loadMoreReels()" style="background:transparent; border:1.5px solid var(--terracotta); color:var(--terracotta); padding:0.75rem 2rem; border-radius:100px; font-size:0.9rem; font-weight:500; cursor:pointer; font-family:var(--font-body); transition:all 0.2s;">Load More Reels ↓</button>
+    <!-- Unified Load More Button -->
+    <div class="load-more-wrap" id="works-load-more" style="display:none;">
+      <button class="load-more-btn" onclick="loadMoreWorks()">Load More ↓</button>
     </div>
 
   </section>
 </div>
 
-<!-- FLIPBOOK MODAL — no inline display style; controlled entirely by CSS #flipbook-modal / #flipbook-modal.active -->
+<!-- FLIPBOOK MODAL -->
 <div id="flipbook-modal" onclick="closeFlipbook(event)">
   <div style="position:relative; max-width:480px; width:100%; background:#fff; border-radius:16px; overflow:hidden;">
     <button onclick="closeFlipbook()" style="position:absolute; top:0.75rem; right:0.75rem; background:rgba(0,0,0,0.5); border:none; color:white; width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:1rem; z-index:10;">✕</button>
@@ -663,76 +674,105 @@
 </footer>
 
 <script>
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach((el, i) => { el.style.transitionDelay = `${(i % 4) * 0.08}s`; obs.observe(el); });
+  // ── Fade-in on scroll ──
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach((el, i) => { el.style.transitionDelay = `${(i % 4) * 0.08}s`; obs.observe(el); });
 
-const packages = {
-  starter: { name: 'Starter', price: '$429/month', desc: 'For brands that need a consistent and professional presence.', features: ['10 curated posts per month','Caption writing','Basic content planning','Custom-designed visuals','1 revision per post','Monthly content overview','1 platform (IG & FB)'], ideal: 'Ideal for maintaining an active and polished social presence.' },
-  growth: { name: 'Growth', price: '$799/month', desc: 'For brands ready to grow and engage their audience.', features: ['15 strategic posts per month','Content calendar (planned monthly)','Caption + hashtag strategy','Custom-designed visuals','2 revisions per post','Monthly performance check-in','Content campaign execution','1–2 platforms (IG & FB or LI)'], ideal: 'Designed to increase engagement and build a stronger brand presence.' },
-  premium: { name: 'Premium', price: '$1,199/month', desc: 'For brands that want full social media support and strategy.', features: ['20–25 high-quality posts per month','Full content strategy & direction','Advanced visual design system','Campaign planning & execution','Content calendar + captions + hashtags','Priority revisions & support','Monthly performance insights','2–3 platforms (IG, FB, or LI)'], ideal: 'A complete solution for brands ready to scale and stand out.' }
-};
+  // ── Packages modal ──
+  const packages = {
+    starter: { name: 'Starter', price: '$429/month', desc: 'For brands that need a consistent and professional presence.', features: ['10 curated posts per month','Caption writing','Basic content planning','Custom-designed visuals','1 revision per post','Monthly content overview','1 platform (IG & FB)'], ideal: 'Ideal for maintaining an active and polished social presence.' },
+    growth:  { name: 'Growth',  price: '$799/month', desc: 'For brands ready to grow and engage their audience.',          features: ['15 strategic posts per month','Content calendar (planned monthly)','Caption + hashtag strategy','Custom-designed visuals','2 revisions per post','Monthly performance check-in','Content campaign execution','1–2 platforms (IG & FB or LI)'], ideal: 'Designed to increase engagement and build a stronger brand presence.' },
+    premium: { name: 'Premium', price: '$1,199/month', desc: 'For brands that want full social media support and strategy.', features: ['20–25 high-quality posts per month','Full content strategy & direction','Advanced visual design system','Campaign planning & execution','Content calendar + captions + hashtags','Priority revisions & support','Monthly performance insights','2–3 platforms (IG, FB, or LI)'], ideal: 'A complete solution for brands ready to scale and stand out.' }
+  };
 
-function openModal(pkg) {
-  const p = packages[pkg];
-  document.getElementById('modal-content').innerHTML = `<h3>${p.name}</h3><div class="modal-price">${p.price}</div><div class="modal-desc">${p.desc}</div><ul>${p.features.map(f=>`<li>${f}</li>`).join('')}</ul><p style="font-size:0.82rem;font-style:italic;color:var(--ink-muted);">✦ ${p.ideal}</p>`;
-  document.getElementById('pkg-modal').classList.add('active');
-}
+  function openModal(pkg) {
+    const p = packages[pkg];
+    document.getElementById('modal-content').innerHTML = `<h3>${p.name}</h3><div class="modal-price">${p.price}</div><div class="modal-desc">${p.desc}</div><ul>${p.features.map(f=>`<li>${f}</li>`).join('')}</ul><p style="font-size:0.82rem;font-style:italic;color:var(--ink-muted);">✦ ${p.ideal}</p>`;
+    document.getElementById('pkg-modal').classList.add('active');
+  }
+  function closeModal(e) {
+    if (!e || e.target === document.getElementById('pkg-modal')) document.getElementById('pkg-modal').classList.remove('active');
+  }
 
-function closeModal(e) {
-  if (!e || e.target === document.getElementById('pkg-modal')) document.getElementById('pkg-modal').classList.remove('active');
-}
+  // ── Flipbook ──
+  const flipbookPages = ['Amarmenu1.png','Amarmenu2.png','Amarmenu3.png','Amarmenu4.png','Amarmenu5.png','Amarmenu6.png'];
+  let flipbookPage = 0;
+  function openFlipbook() { flipbookPage = 0; updateFlipbook(); document.getElementById('flipbook-modal').classList.add('active'); }
+  function closeFlipbook(e) { if (!e || e.target === document.getElementById('flipbook-modal')) document.getElementById('flipbook-modal').classList.remove('active'); }
+  function flipPage(dir) { flipbookPage = Math.max(0, Math.min(flipbookPages.length - 1, flipbookPage + dir)); updateFlipbook(); }
+  function updateFlipbook() { document.getElementById('flipbook-img').src = flipbookPages[flipbookPage]; document.getElementById('flipbook-counter').textContent = `${flipbookPage + 1} / ${flipbookPages.length}`; }
 
-// FLIPBOOK
-const flipbookPages = ['Amarmenu1.png','Amarmenu2.png','Amarmenu3.png','Amarmenu4.png','Amarmenu5.png','Amarmenu6.png'];
-let flipbookPage = 0;
+  // ── Works: filter + load more ──
+  const INITIAL_COUNT = 3;
+  const LOAD_BATCH    = 3;
+  let currentCards  = [];   // ordered list for the active filter
+  let currentLoaded = 0;
 
-function openFlipbook() {
-  flipbookPage = 0;
-  updateFlipbook();
-  document.getElementById('flipbook-modal').classList.add('active');
-}
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
 
-function closeFlipbook(e) {
-  if (!e || e.target === document.getElementById('flipbook-modal')) document.getElementById('flipbook-modal').classList.remove('active');
-}
+  function filterWorks(category, btn) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
 
-function flipPage(dir) {
-  flipbookPage = Math.max(0, Math.min(flipbookPages.length - 1, flipbookPage + dir));
-  updateFlipbook();
-}
+    const allCards = Array.from(document.querySelectorAll('.work-card'));
 
-function updateFlipbook() {
-  document.getElementById('flipbook-img').src = flipbookPages[flipbookPage];
-  document.getElementById('flipbook-counter').textContent = `${flipbookPage + 1} / ${flipbookPages.length}`;
-}
+    // Hide everything first
+    allCards.forEach(c => c.classList.add('hidden'));
 
-function loadMoreReels() {
-  document.querySelectorAll('.reels-extra').forEach(el => { el.style.display = 'flex'; });
-  document.getElementById('reels-load-more').style.display = 'none';
-}
+    // Pick relevant cards — shuffle for "All" so visitors see a variety
+    let relevant;
+    if (category === 'all') {
+      relevant = shuffleArray([...allCards]);
+    } else {
+      relevant = allCards.filter(c => c.dataset.category === category);
+    }
 
-function filterWorks(category) {
-  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-  document.querySelectorAll('.reels-extra').forEach(el => el.style.display = 'none');
-  document.querySelectorAll('.work-card').forEach(item => {
-    if (item.classList.contains('reels-extra')) return;
-    (category === 'all' || item.dataset.category === category) ? item.classList.remove('hidden') : item.classList.add('hidden');
+    // Show first batch
+    const toShow = Math.min(INITIAL_COUNT, relevant.length);
+    relevant.slice(0, toShow).forEach(c => c.classList.remove('hidden'));
+
+    currentCards  = relevant;
+    currentLoaded = toShow;
+
+    // Toggle load-more button
+    const btn2 = document.getElementById('works-load-more');
+    btn2.style.display = relevant.length > INITIAL_COUNT ? 'block' : 'none';
+  }
+
+  function loadMoreWorks() {
+    const next = currentCards.slice(currentLoaded, currentLoaded + LOAD_BATCH);
+    next.forEach(c => c.classList.remove('hidden'));
+    currentLoaded += next.length;
+
+    if (currentLoaded >= currentCards.length) {
+      document.getElementById('works-load-more').style.display = 'none';
+    }
+  }
+
+  // Initialise on load — show 3 random items in "All"
+  document.addEventListener('DOMContentLoaded', () => {
+    filterWorks('all', document.querySelector('.filter-btn.active'));
   });
-  document.getElementById('reels-load-more').style.display = (category === 'reels' || category === 'all') ? 'block' : 'none';
-}
 
-function handleSubmit() {
-  var name = document.getElementById('nameInput').value.trim();
-  var email = document.getElementById('emailInput').value.trim();
-  var service = document.getElementById('serviceInput').value;
-  if (!name || !email || !service) { alert('Please fill in your name, email, and select a service.'); return; }
-  window.open('https://forms.gle/oYc77XufwQ2epErb7', '_blank');
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('thankYou').classList.add('visible');
-}
+  // ── Contact form ──
+  function handleSubmit() {
+    var name    = document.getElementById('nameInput').value.trim();
+    var email   = document.getElementById('emailInput').value.trim();
+    var service = document.getElementById('serviceInput').value;
+    if (!name || !email || !service) { alert('Please fill in your name, email, and select a service.'); return; }
+    window.open('https://forms.gle/oYc77XufwQ2epErb7', '_blank');
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('thankYou').classList.add('visible');
+  }
 </script>
 </body>
 </html>
