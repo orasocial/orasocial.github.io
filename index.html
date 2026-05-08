@@ -258,9 +258,19 @@
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+  /* Nav socials */
+  .nav-socials { display: flex; align-items: center; gap: 0.75rem; margin-left: 1.25rem; }
+  .nav-social-link { color: var(--ink-muted); transition: color 0.2s, transform 0.2s; display: flex; align-items: center; }
+  .nav-social-link:hover { color: var(--terracotta); transform: translateY(-1px); }
+
+  /* Footer */
   footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem; text-align: center; }
-  footer p { font-size: 0.8rem; color: rgba(250, 247, 242, 0.35); }
+  footer p { font-size: 0.8rem; color: rgba(250, 247, 242, 0.35); margin-top: 0.75rem; }
   footer a { color: var(--blush); text-decoration: none; }
+  .footer-socials { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-bottom: 0.5rem; }
+  .footer-social-link { display: flex; align-items: center; gap: 0.4rem; color: rgba(250,247,242,0.45); font-size: 0.8rem; text-decoration: none; transition: color 0.2s, transform 0.2s; }
+  .footer-social-link:hover { color: var(--blush); transform: translateY(-1px); }
+  .footer-social-link span { font-family: var(--font-body); letter-spacing: 0.04em; }
 </style>
 </head>
 <body>
@@ -274,6 +284,14 @@
     <li><a href="#about">About</a></li>
     <li><a href="#contact" class="nav-cta">Work With Me</a></li>
   </ul>
+  <div class="nav-socials">
+    <a href="https://www.instagram.com/orasocial/" target="_blank" aria-label="Instagram" class="nav-social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/maryaiesmeralda" target="_blank" aria-label="LinkedIn" class="nav-social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+  </div>
 </nav>
 
 <div style="max-width:100%; overflow:hidden; position:relative;">
@@ -670,6 +688,16 @@
 </section>
 
 <footer>
+  <div class="footer-socials">
+    <a href="https://www.instagram.com/orasocial/" target="_blank" aria-label="Instagram" class="footer-social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a href="https://www.linkedin.com/in/maryaiesmeralda" target="_blank" aria-label="LinkedIn" class="footer-social-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      <span>LinkedIn</span>
+    </a>
+  </div>
   <p>© 2026 OraSocial — <a href="mailto:orasocialsmm@email.com">orasocialsmm@email.com</a></p>
 </footer>
 
