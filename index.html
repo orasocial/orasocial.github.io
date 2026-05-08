@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta property="og:title" content="OraSocial — Social Media Strategy & Content Creation" />
-<meta property="og:description" content="I help brands grow through strategic social media management, scroll-stopping visuals, and campaigns designed to connect, engage, and convert." />
-<meta property="og:image" content="https://orasocial.github.io/og-banner.png" />
-<meta property="og:url" content="https://orasocial.github.io/" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://orasocial.github.io/og-banner.png" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OraSocial — Social Media Strategy & Content Creation</title>
@@ -44,6 +37,12 @@
     font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      font-size: 18px;
+    }
   }
 
   /* NAV */
@@ -434,49 +433,28 @@
     position: relative;
   }
 
-  /* PLACEHOLDER STYLES */
   .work-placeholder {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    background: var(--warm-white);
-    transition: background 0.2s;
-  }
-
-  .work-item:hover .work-placeholder {
-    background: #F5F1EB;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    color: var(--ink-muted);
   }
 
   .work-placeholder-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    border: 1.5px dashed var(--border-strong);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .work-placeholder-icon svg {
-    width: 22px;
-    height: 22px;
-    stroke: var(--ink-muted);
-    fill: none;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    font-size: 1.5rem;
+    opacity: 0.4;
   }
 
   .work-placeholder-label {
     font-size: 0.78rem;
     font-weight: 500;
-    color: var(--ink-muted);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
+    opacity: 0.5;
   }
 
   /* ABOUT */
@@ -614,11 +592,12 @@
   }
 
   .about-results ul li::before {
-    content: '▶️';
+    content: '▸';
     position: absolute;
     left: 0;
     font-size: 0.7rem;
     top: 0.35rem;
+    color: var(--terracotta);
   }
 
   .about-tagline {
@@ -729,106 +708,6 @@
     text-align: center;
   }
 
-  #contact .section-label { color: var(--blush); }
-  #contact .section-title { color: var(--warm-white); }
-  #contact .section-sub { color: rgba(250, 247, 242, 0.6); margin: 0 auto 2.5rem; }
-
-  .contact-form {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 2.5rem;
-    text-align: left;
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
-
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
-
-  .form-group label {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: rgba(250, 247, 242, 0.7);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 10px;
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-    color: var(--warm-white);
-    font-family: var(--font-body);
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .form-group input::placeholder,
-  .form-group textarea::placeholder { color: rgba(250, 247, 242, 0.35); }
-
-  .form-group input:focus,
-  .form-group textarea:focus,
-  .form-group select:focus { border-color: var(--blush); }
-
-  .form-group textarea { resize: vertical; min-height: 120px; }
-
-  .form-submit {
-    width: 100%;
-    background: var(--terracotta);
-    color: white;
-    border: none;
-    border-radius: 100px;
-    padding: 1rem 2rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    cursor: pointer;
-    font-family: var(--font-body);
-    transition: background 0.2s, transform 0.15s;
-    letter-spacing: 0.02em;
-    margin-top: 0.5rem;
-  }
-
-  .form-submit:hover {
-    background: var(--terracotta-dark);
-    transform: translateY(-1px);
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--ink);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 2rem;
-    text-align: center;
-  }
-
-  footer p { font-size: 0.8rem; color: rgba(250, 247, 242, 0.35); }
-  footer a { color: var(--blush); text-decoration: none; }
-
-  .full-section { max-width: 100% !important; }
-
-  /* SCROLL FADE IN */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
   /* PROCESS */
   #process {
     max-width: 1100px;
@@ -850,8 +729,6 @@
     align-items: stretch;
     position: relative;
   }
-
-  .process-col.reverse { flex-direction: column; }
 
   .process-step {
     display: flex;
@@ -917,7 +794,6 @@
 
   @media (max-width: 768px) {
     .process-flow { grid-template-columns: 1fr; }
-    .process-col.reverse { flex-direction: column; }
     .process-arrow.right { display: none; }
   }
 
@@ -958,16 +834,9 @@
     font-family: var(--font-body);
   }
 
-  .package-btn:hover {
-    background: var(--terracotta);
-    color: white;
-  }
+  .package-btn:hover { background: var(--terracotta); color: white; }
 
-  .featured-btn {
-    background: var(--terracotta);
-    color: white;
-  }
-
+  .featured-btn { background: var(--terracotta); color: white; }
   .featured-btn:hover { opacity: 0.85; }
 
   /* MODAL */
@@ -1083,19 +952,101 @@
     transition: all 0.2s;
   }
 
-  .filter-btn:hover {
-    border-color: var(--terracotta);
-    color: var(--terracotta);
+  .filter-btn:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .filter-btn.active { background: var(--terracotta); border-color: var(--terracotta); color: white; }
+
+  /* WORK CARD WRAPPER */
+  .work-card {
+    display: flex;
+    flex-direction: column;
   }
 
-  .filter-btn.active {
-    background: var(--terracotta);
-    border-color: var(--terracotta);
+  .work-card.hidden { display: none; }
+
+  .work-item {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--warm-white);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .work-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .work-item:hover img { transform: scale(1.04); }
+
+  /* OVERLAY — desktop hover */
+  .work-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 20, 16, 0.65);
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+  }
+
+  .work-item:hover .work-overlay { opacity: 1; }
+
+  .work-overlay-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .work-overlay-title {
     color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-family: var(--font-display);
+  }
+
+  .work-overlay-desc {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* CAPTION — always visible on mobile, hidden on desktop */
+  .work-caption {
+    padding: 0.65rem 0.25rem 0.25rem;
+    display: none;
+  }
+
+  .work-caption-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+    font-family: var(--font-display);
+  }
+
+  .work-caption-desc {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  @media (hover: none), (max-width: 768px) {
+    .work-overlay { display: none; }
+    .work-caption { display: block; }
   }
 
   /* WORK BADGE */
-  .work-badge {
     position: absolute;
     bottom: 8px;
     left: 8px;
@@ -1126,16 +1077,8 @@
     padding: 1rem;
   }
 
-  .reels-icon {
-    font-size: 2rem;
-    color: var(--terracotta);
-  }
-
-  .reels-label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--ink);
-  }
+  .reels-icon { font-size: 2rem; color: var(--terracotta); }
+  .reels-label { font-size: 0.9rem; font-weight: 500; color: var(--ink); }
 
   .reels-link {
     font-size: 0.82rem;
@@ -1147,25 +1090,29 @@
     transition: all 0.2s;
   }
 
-  .reels-link:hover {
-    background: var(--terracotta);
-    color: white;
-  }
+  .reels-link:hover { background: var(--terracotta); color: white; }
 
-  /* HIDDEN FILTERED ITEMS */
   .work-item.hidden { display: none; }
 
   #packages .inner { text-align: center !important; }
   #packages .packages-grid { text-align: left; }
   #packages .section-sub { margin-left: auto; margin-right: auto; text-align: center; }
 
-  @media (min-width: 1024px) {
-    body { font-size: 18px; }
+  /* DIVIDERS */
+  .full-section { max-width: 100% !important; }
+
+  /* SCROLL FADE IN */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
 
-  /* Contact section inline styles moved here */
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* CONTACT FORM */
   .c-eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A96E; font-weight: 500; margin-bottom: 14px; }
-  .c-heading { font-family: 'DM Serif Display', serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 400; line-height: 1.15; color: #FAF8F4; margin-bottom: 16px; }
+  .c-heading { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 400; line-height: 1.15; color: #FAF8F4; margin-bottom: 16px; }
   .c-heading em { font-style: italic; color: #C9A96E; }
   .c-desc { font-size: 14px; color: #9B9488; line-height: 1.75; margin-bottom: 36px; max-width: 380px; }
   .c-perks { display: flex; flex-direction: column; gap: 13px; margin-bottom: 40px; }
@@ -1189,11 +1136,22 @@
   .thank-you { display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; gap: 16px; }
   .thank-you.visible { display: flex; }
   .ty-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(201,169,110,0.15); display: flex; align-items: center; justify-content: center; font-size: 22px; }
-  .ty-heading { font-family: 'DM Serif Display', serif; font-size: 24px; font-weight: 400; color: #FAF8F4; }
+  .ty-heading { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: #FAF8F4; }
   .ty-heading em { font-style: italic; color: #C9A96E; }
   .ty-desc { font-size: 14px; color: #9B9488; line-height: 1.7; max-width: 320px; }
   .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
   @media (max-width: 700px) { .contact-inner { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 2rem;
+    text-align: center;
+  }
+
+  footer p { font-size: 0.8rem; color: rgba(250, 247, 242, 0.35); }
+  footer a { color: var(--blush); text-decoration: none; }
 </style>
 </head>
 <body>
@@ -1289,6 +1247,7 @@
     <p class="section-sub">From discovery to results, here's exactly how we work together.</p>
   </div>
   <div class="process-flow fade-in">
+    <!-- Column 1 -->
     <div class="process-col">
       <div class="process-step">
         <div class="step-num">1</div>
@@ -1315,6 +1274,7 @@
       </div>
       <div class="process-arrow right">→</div>
     </div>
+    <!-- Column 2 -->
     <div class="process-col">
       <div class="process-step">
         <div class="step-num">4</div>
@@ -1341,6 +1301,7 @@
       </div>
       <div class="process-arrow right">→</div>
     </div>
+    <!-- Column 3 -->
     <div class="process-col">
       <div class="process-step">
         <div class="step-num">7</div>
@@ -1378,6 +1339,7 @@
       <p class="section-sub">Transparent pricing. No hidden fees. Pick what fits your brand.</p>
     </div>
     <div class="packages-grid fade-in">
+      <!-- Starter -->
       <div class="package-card">
         <div class="package-name">Starter</div>
         <div class="package-price">Starts at $429<span>/month</span></div>
@@ -1392,6 +1354,7 @@
         <p class="package-ideal">✦ Stay active, look polished, and show up consistently.</p>
         <button class="package-btn" onclick="openModal('starter')">Get Started</button>
       </div>
+      <!-- Growth -->
       <div class="package-card featured">
         <div class="package-badge">⭐ Most Recommended</div>
         <div class="package-name">Growth</div>
@@ -1409,16 +1372,17 @@
         <p class="package-ideal">✦ Build momentum and grow a stronger brand presence.</p>
         <button class="package-btn featured-btn" onclick="openModal('growth')">Get Started</button>
       </div>
+      <!-- Premium -->
       <div class="package-card">
         <div class="package-name">Premium</div>
         <div class="package-price">Starts at $1,199<span>/month</span></div>
         <div class="package-tagline">For brands that want full social media support and strategy.</div>
         <ul class="package-features">
-          <li>25 - 30 posts per month</li>
+          <li>25–30 posts per month</li>
           <li>Full content strategy & direction</li>
           <li>Advanced visual design system</li>
           <li>Campaign planning & execution</li>
-          <li>Priority support & Community management</li>
+          <li>Priority support & community management</li>
           <li>Monthly performance insights & strategy call</li>
           <li>2–3 Platforms</li>
         </ul>
@@ -1449,97 +1413,73 @@
 
     <!-- Filter Tabs -->
     <div class="works-filters fade-in">
-      <button class="filter-btn active" onclick="filterWorks('all', event)">All</button>
-      <button class="filter-btn" onclick="filterWorks('graphics', event)">Graphics</button>
-      <button class="filter-btn" onclick="filterWorks('reels', event)">Reels</button>
-      <button class="filter-btn" onclick="filterWorks('campaign', event)">Campaign / Branding</button>
+      <button class="filter-btn active" onclick="filterWorks('all')">All</button>
+      <button class="filter-btn" onclick="filterWorks('graphics')">Graphics</button>
+      <button class="filter-btn" onclick="filterWorks('reels')">Reels</button>
+      <button class="filter-btn" onclick="filterWorks('campaign')">Campaign / Branding</button>
     </div>
 
     <div class="works-grid">
-
-      <!-- GRAPHICS placeholders (4) -->
-      <div class="work-item fade-in" data-category="graphics">
-        <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          </div>
-          <span class="work-placeholder-label">Graphics</span>
+      <div class="work-card fade-in" data-category="graphics">
+        <div class="work-item">
+          <img src="Glunevia1.png" alt="Lunévia Collection Launch">
+          <div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Lunévia — Collection Launch</div><div class="work-overlay-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div></div>
+          <div class="work-badge">Graphics</div>
         </div>
-        <div class="work-badge">Graphics</div>
+        <div class="work-caption"><div class="work-caption-title">Lunévia — Collection Launch</div><div class="work-caption-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div>
       </div>
-
-      <div class="work-item fade-in" data-category="graphics">
-        <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          </div>
-          <span class="work-placeholder-label">Graphics</span>
+      <div class="work-card fade-in" data-category="graphics">
+        <div class="work-item">
+          <img src="Glunevia2.png" alt="Lunévia Where Elegance Begins">
+          <div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Lunévia — Where Elegance Begins</div><div class="work-overlay-desc">Aspirational visual storytelling to build brand desire and emotional connection.</div></div></div>
+          <div class="work-badge">Graphics</div>
         </div>
-        <div class="work-badge">Graphics</div>
+        <div class="work-caption"><div class="work-caption-title">Lunévia — Where Elegance Begins</div><div class="work-caption-desc">Aspirational visual storytelling to build brand desire and emotional connection.</div></div>
       </div>
-
-      <div class="work-item fade-in" data-category="graphics">
-        <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          </div>
-          <span class="work-placeholder-label">Graphics</span>
-        </div>
-        <div class="work-badge">Graphics</div>
-      </div>
-
-      <div class="work-item fade-in" data-category="graphics">
-        <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          </div>
-          <span class="work-placeholder-label">Graphics</span>
-        </div>
-        <div class="work-badge">Graphics</div>
-      </div>
-
-      <!-- CAMPAIGN / BRANDING placeholders (4) -->
       <div class="work-item fade-in" data-category="campaign">
         <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <span class="work-placeholder-label">Campaign</span>
+          <div class="work-placeholder-icon">📣</div>
+          <div class="work-placeholder-label">Campaign</div>
         </div>
         <div class="work-badge">Campaign</div>
       </div>
-
       <div class="work-item fade-in" data-category="campaign">
         <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <span class="work-placeholder-label">Branding</span>
-        </div>
-        <div class="work-badge">Branding</div>
-      </div>
-
-      <div class="work-item fade-in" data-category="campaign">
-        <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <span class="work-placeholder-label">Campaign</span>
+          <div class="work-placeholder-icon">📣</div>
+          <div class="work-placeholder-label">Campaign</div>
         </div>
         <div class="work-badge">Campaign</div>
       </div>
-
+      <div class="work-card fade-in" data-category="graphics">
+        <div class="work-item">
+          <img src="Glunevia3.png" alt="Lunévia Diamond Ring">
+          <div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Lunévia — Diamond Ring</div><div class="work-overlay-desc">Luxury product styling crafted to highlight premium quality and exclusivity.</div></div></div>
+          <div class="work-badge">Graphics</div>
+        </div>
+        <div class="work-caption"><div class="work-caption-title">Lunévia — Diamond Ring</div><div class="work-caption-desc">Luxury product styling crafted to highlight premium quality and exclusivity.</div></div>
+      </div>
       <div class="work-item fade-in" data-category="campaign">
         <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          </div>
-          <span class="work-placeholder-label">Branding</span>
+          <div class="work-placeholder-icon">✨</div>
+          <div class="work-placeholder-label">Branding</div>
         </div>
         <div class="work-badge">Branding</div>
       </div>
-
-      <!-- REELS placeholders (4 — first is the real link card, rest are placeholders) -->
+      <div class="work-card fade-in" data-category="graphics">
+        <div class="work-item">
+          <img src="Glunevia4.png" alt="Lunévia Radiance & Grace">
+          <div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Lunévia — Radiance & Grace</div><div class="work-overlay-desc">Lifestyle content strategy connecting the brand to real, everyday moments.</div></div></div>
+          <div class="work-badge">Graphics</div>
+        </div>
+        <div class="work-caption"><div class="work-caption-title">Lunévia — Radiance & Grace</div><div class="work-caption-desc">Lifestyle content strategy connecting the brand to real, everyday moments.</div></div>
+      </div>
+      <div class="work-item fade-in" data-category="campaign">
+        <div class="work-placeholder">
+          <div class="work-placeholder-icon">✨</div>
+          <div class="work-placeholder-label">Branding</div>
+        </div>
+        <div class="work-badge">Branding</div>
+      </div>
       <div class="work-item fade-in reels-card" data-category="reels">
         <div class="reels-placeholder">
           <span class="reels-icon">▶</span>
@@ -1548,37 +1488,6 @@
         </div>
         <div class="work-badge">Reels</div>
       </div>
-
-      <div class="work-item fade-in" data-category="reels">
-        <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <span class="work-placeholder-label">Reels</span>
-        </div>
-        <div class="work-badge">Reels</div>
-      </div>
-
-      <div class="work-item fade-in" data-category="reels">
-        <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <span class="work-placeholder-label">Reels</span>
-        </div>
-        <div class="work-badge">Reels</div>
-      </div>
-
-      <div class="work-item fade-in" data-category="reels">
-        <div class="work-placeholder">
-          <div class="work-placeholder-icon">
-            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          </div>
-          <span class="work-placeholder-label">Reels</span>
-        </div>
-        <div class="work-badge">Reels</div>
-      </div>
-
     </div>
   </section>
 </div>
@@ -1629,45 +1538,45 @@
 <section id="testimonials" class="full-section">
   <div class="inner">
     <div class="section-label">Client Love</div>
-    <h2 class="section-title">What my clients <em>say</em></h2>
+    <h2 class="section-title">What My Clients Say</h2>
     <p class="section-sub">Real results, real people. Here's what it's like to work with OraSocial.</p>
     <div class="testimonials-grid">
       <div class="testimonial-card fade-in">
-        <div class="stars">
-          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        <div class="stars" style="display:flex;gap:3px;">
+          <span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span>
         </div>
         <p class="testimonial-text">I started with little to no knowledge of social media, but with Mary handling everything, I now feel confident, excited, and proud of my online presence.</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar av-purple">L</div>
+          <div class="testimonial-avatar">L</div>
           <div>
             <div class="testimonial-name">Liliya</div>
-            <div class="testimonial-role">E-commerce brand owner</div>
+            <div class="testimonial-role">E-commerce Brand Owner</div>
           </div>
         </div>
       </div>
       <div class="testimonial-card fade-in">
-        <div class="stars">
-          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        <div class="stars" style="display:flex;gap:3px;">
+          <span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span>
         </div>
-        <p class="testimonial-text">Our posts now actually reflect our brand, and I've seen more interest and interaction from customers. Everything became more cohesive and engaging.</p>
+        <p class="testimonial-text">Before working with Mary, I struggled to make my products stand out online. Our posts now actually reflect our brand, and I've seen more interest and interaction from customers.</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar av-pink">LH</div>
+          <div class="testimonial-avatar">LH</div>
           <div>
             <div class="testimonial-name">Lune Hayes</div>
-            <div class="testimonial-role">Fashion brand owner</div>
+            <div class="testimonial-role">Fashion Brand Owner</div>
           </div>
         </div>
       </div>
       <div class="testimonial-card fade-in">
-        <div class="stars">
-          <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+        <div class="stars" style="display:flex;gap:3px;">
+          <span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span><span style="color:#C4704A;">★</span>
         </div>
-        <p class="testimonial-text">Our message is now clearer and reaching more people. She made it easier for us to connect with our community and share our mission.</p>
+        <p class="testimonial-text">Managing our social media used to feel overwhelming. With Mary's help, our message is now clearer and reaching more people. She made it easier to connect with our community.</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar av-teal">JA</div>
+          <div class="testimonial-avatar">JA</div>
           <div>
             <div class="testimonial-name">Jennifer Alba</div>
-            <div class="testimonial-role">Program coordinator, NGO</div>
+            <div class="testimonial-role">Program Coordinator, Community Outreach NGO</div>
           </div>
         </div>
       </div>
@@ -1731,7 +1640,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 OraSocial — <a href="mailto:orasocialsmm@gmail.com">orasocialsmm@gmail.com</a></p>
+  <p>© 2026 OraSocial — <a href="mailto:orasocialsmm@email.com">orasocialsmm@email.com</a></p>
 </footer>
 
 <script>
@@ -1817,11 +1726,10 @@ function closeModal(e) {
   }
 }
 
-function filterWorks(category, event) {
+function filterWorks(category) {
   document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-  if (event) event.target.classList.add('active');
-
-  document.querySelectorAll('.work-item').forEach(item => {
+  event.target.classList.add('active');
+  document.querySelectorAll('.work-card').forEach(item => {
     if (category === 'all' || item.dataset.category === category) {
       item.classList.remove('hidden');
     } else {
