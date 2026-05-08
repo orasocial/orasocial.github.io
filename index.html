@@ -1046,6 +1046,33 @@
     .work-caption { display: block; }
   }
 
+  /* REEL THUMBNAILS */
+  .reel-thumb-link { display: block; text-decoration: none; }
+  .reel-thumb { position: relative; cursor: pointer; }
+  .reel-thumb img { transition: transform 0.4s ease; }
+  .reel-thumb:hover img { transform: scale(1.04); }
+  .reel-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--terracotta);
+    transition: transform 0.2s, background 0.2s;
+    pointer-events: none;
+  }
+  .reel-thumb:hover .reel-play-btn {
+    transform: translate(-50%, -50%) scale(1.12);
+    background: white;
+  }
+
   /* WORK BADGE */
     position: absolute;
     bottom: 8px;
@@ -1489,20 +1516,62 @@
         </div>
       </div>
       <div class="work-card fade-in" data-category="reels">
-        <div class="work-item reels-card">
-          <div class="reels-placeholder">
-            <span class="reels-icon">▶</span>
-            <span class="reels-label">Video Reels</span>
-            <a href="https://aidensolutions.my.canva.site/my-reels" target="_blank" class="reels-link">Watch Now →</a>
+        <a href="https://youtube.com/shorts/5RN-wIeJGEI" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <img src="https://i.ytimg.com/vi/5RN-wIeJGEI/hqdefault.jpg" alt="Reel 1" style="width:100%;height:100%;object-fit:cover;">
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
           </div>
-          <div class="work-badge">Reels</div>
-        </div>
+        </a>
+      </div>
+      <div class="work-card fade-in" data-category="reels">
+        <a href="https://youtube.com/shorts/EMNUZIkq7Jo" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <img src="https://i.ytimg.com/vi/EMNUZIkq7Jo/hqdefault.jpg" alt="Reel 2" style="width:100%;height:100%;object-fit:cover;">
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
+          </div>
+        </a>
+      </div>
+      <div class="work-card fade-in" data-category="reels">
+        <a href="https://youtube.com/shorts/5n0m-ZhlTT4" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <img src="https://i.ytimg.com/vi/5n0m-ZhlTT4/hqdefault.jpg" alt="Reel 3" style="width:100%;height:100%;object-fit:cover;">
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
+          </div>
+        </a>
+      </div>
+      <div class="work-card fade-in" data-category="reels">
+        <a href="https://youtube.com/shorts/H9lO1sHF2wU" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <img src="https://i.ytimg.com/vi/H9lO1sHF2wU/hqdefault.jpg" alt="Reel 4" style="width:100%;height:100%;object-fit:cover;">
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
+          </div>
+        </a>
+      </div>
+      <!-- Hidden reel — shown after Load More -->
+      <div class="work-card fade-in reels-extra" data-category="reels" style="display:none;">
+        <a href="https://youtube.com/shorts/9oh31nl9mTg" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <img src="https://i.ytimg.com/vi/9oh31nl9mTg/hqdefault.jpg" alt="Reel 5" style="width:100%;height:100%;object-fit:cover;">
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
+          </div>
+        </a>
       </div>
     </div>
+
+    <!-- Load More -->
+    <div id="reels-load-more" style="display:none; text-align:center; margin-top:2rem;">
+      <button onclick="loadMoreReels()" style="background:transparent; border:1.5px solid var(--terracotta); color:var(--terracotta); padding:0.75rem 2rem; border-radius:100px; font-size:0.9rem; font-weight:500; cursor:pointer; font-family:var(--font-body); transition:all 0.2s;">
+        Load More Reels ↓
+      </button>
+    </div>
+
   </section>
 </div>
-
-<!-- ABOUT -->
 <section id="about">
   <div class="about-grid">
     <div class="about-img-wrap fade-in">
@@ -1736,16 +1805,32 @@ function closeModal(e) {
   }
 }
 
+function loadMoreReels() {
+  document.querySelectorAll('.reels-extra').forEach(el => {
+    el.style.display = 'flex';
+  });
+  document.getElementById('reels-load-more').style.display = 'none';
+}
+
 function filterWorks(category) {
   document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
+
+  // Reset hidden reels back to hidden
+  document.querySelectorAll('.reels-extra').forEach(el => el.style.display = 'none');
+
   document.querySelectorAll('.work-card').forEach(item => {
+    if (item.classList.contains('reels-extra')) return; // skip, handled separately
     if (category === 'all' || item.dataset.category === category) {
       item.classList.remove('hidden');
     } else {
       item.classList.add('hidden');
     }
   });
+
+  // Show Load More only when reels are visible
+  const loadMore = document.getElementById('reels-load-more');
+  loadMore.style.display = (category === 'reels' || category === 'all') ? 'block' : 'none';
 }
 
 function handleSubmit() {
