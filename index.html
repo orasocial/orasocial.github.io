@@ -7,7 +7,7 @@
 <meta name="description" content="Helping brands grow through strategic social media management, content creation, and campaign execution.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -167,11 +167,9 @@
   .reel-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; background: rgba(255,255,255,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--terracotta); transition: transform 0.2s, background 0.2s; pointer-events: none; }
   .reel-thumb:hover .reel-play-btn { transform: translate(-50%, -50%) scale(1.12); background: white; }
 
-  /* FLIPBOOK MODAL */
   #flipbook-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem; }
   #flipbook-modal.active { display: flex; }
 
-  /* Load More Button */
   .load-more-wrap { text-align: center; margin-top: 2.5rem; }
   .load-more-btn { background: transparent; border: 1.5px solid var(--terracotta); color: var(--terracotta); padding: 0.75rem 2.5rem; border-radius: 100px; font-size: 0.9rem; font-weight: 500; cursor: pointer; font-family: var(--font-body); transition: all 0.2s; letter-spacing: 0.02em; }
   .load-more-btn:hover { background: var(--terracotta); color: white; transform: translateY(-1px); }
@@ -258,12 +256,10 @@
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  /* Nav socials */
   .nav-socials { display: flex; align-items: center; gap: 0.75rem; margin-left: 1.25rem; }
   .nav-social-link { color: var(--ink-muted); transition: color 0.2s, transform 0.2s; display: flex; align-items: center; }
   .nav-social-link:hover { color: var(--terracotta); transform: translateY(-1px); }
 
-  /* Footer */
   footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.06); padding: 2rem; text-align: center; }
   footer p { font-size: 0.8rem; color: rgba(250, 247, 242, 0.35); margin-top: 0.75rem; }
   footer a { color: var(--blush); text-decoration: none; }
@@ -271,6 +267,79 @@
   .footer-social-link { display: flex; align-items: center; gap: 0.4rem; color: rgba(250,247,242,0.45); font-size: 0.8rem; text-decoration: none; transition: color 0.2s, transform 0.2s; }
   .footer-social-link:hover { color: var(--blush); transform: translateY(-1px); }
   .footer-social-link span { font-family: var(--font-body); letter-spacing: 0.04em; }
+
+  /* ✦ MARQUEE — FIXED */
+  .ora-tools-section {
+    width: 100%;
+    overflow: hidden;
+    padding: 48px 0 56px;
+    background: transparent;
+  }
+  .ora-tools-label {
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: #c8937a;
+    margin-bottom: 18px;
+  }
+  .ora-marquee-wrap {
+    overflow: hidden;
+    width: 100%;
+    padding: 18px 0;
+    border-top: 1px solid rgba(200, 147, 122, 0.2);
+    border-bottom: 1px solid rgba(200, 147, 122, 0.2);
+    /* Fade edges for polished look */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  }
+  .ora-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: ora-scroll-tools 40s linear infinite;
+  }
+  .ora-marquee-track:hover {
+    animation-play-state: paused;
+  }
+  .ora-marquee-inner {
+    display: flex;
+    align-items: center;
+  }
+  .ora-tool-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 16px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #7a4a38;
+    white-space: nowrap;
+  }
+  @media (min-width: 640px) {
+    .ora-tool-item { padding: 0 28px; }
+  }
+  .ora-tool-item img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+    /* FIX: tinted to be visible on cream background */
+    opacity: 0.55;
+    filter: invert(38%) sepia(30%) saturate(500%) hue-rotate(330deg) brightness(0.85);
+  }
+  .ora-tool-sep {
+    font-size: 8px;
+    color: #d4a090;
+    flex-shrink: 0;
+  }
+  @keyframes ora-scroll-tools {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 </style>
 </head>
 <body>
@@ -282,7 +351,7 @@
     <li><a href="#process">Process</a></li>
     <li><a href="#works">Works</a></li>
     <li><a href="#about">About</a></li>
-   <li><a href="blog.html">Blog</a></li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="#contact" class="nav-cta">Work With Me</a></li>
   </ul>
   <div class="nav-socials">
@@ -367,157 +436,18 @@
     </div>
   </div>
 </section>
-<!-- ✦ OraSocial — Tools Marquee Section -->
-<!-- Paste this RIGHT AFTER the closing </section> of your Services section -->
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
-
+<!-- ✦ TOOLS MARQUEE — FIXED VERSION -->
 <section class="ora-tools-section">
   <p class="ora-tools-label">Tools I Work With</p>
   <div class="ora-marquee-wrap">
     <div class="ora-marquee-track">
+      <!-- Single row; JS duplicates content inside for seamless loop -->
       <div class="ora-marquee-inner" id="ora-row1"></div>
-      <div class="ora-marquee-inner" id="ora-row2"></div>
     </div>
   </div>
 </section>
-
-<style>
-.ora-tools-section {
-  width: 100%;
-  overflow: hidden;
-  padding: 48px 0 0;
-  background: transparent;
-}
-
-.ora-tools-label {
-  text-align: center;
-  font-family: 'Jost', sans-serif;
-  font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  color: #c8937a;
-  margin-bottom: 18px;
-}
-
-.ora-marquee-wrap {
-  overflow: hidden;
-  width: 100%;
-  padding: 18px 0;
-  border-top: 1px solid rgba(200, 147, 122, 0.2);
-  border-bottom: 1px solid rgba(200, 147, 122, 0.2);
-}
-
-.ora-marquee-track {
-  display: flex;
-  width: max-content;
-  animation: ora-scroll-tools 40s linear infinite;
-}
-
-.ora-marquee-track:hover {
-  animation-play-state: paused;
-}
-
-.ora-marquee-inner {
-  display: flex;
-  align-items: center;
-}
-
-.ora-tool-item {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 0 28px;
-  font-family: 'Jost', sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  color: #7a4a38;
-  white-space: nowrap;
-}
-
-.ora-tool-item img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  flex-shrink: 0;
-  opacity: 0.75;
-}
-
-.ora-tool-sep {
-  font-size: 8px;
-  color: #d4a090;
-}
-
-@keyframes ora-scroll-tools {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-</style>
-
-<script>
-(function () {
-  const tools = [
-    { name: "GitHub",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" },
-    { name: "Canva",               logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/canva.svg" },
-    { name: "Fibery",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fibery.svg" },
-    { name: "Notion",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/notion.svg" },
-    { name: "Slack",               logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/slack.svg" },
-    { name: "Shopify",             logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shopify.svg" },
-    { name: "WordPress",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wordpress.svg" },
-    { name: "Google Workspace",    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/google.svg" },
-    { name: "ChatGPT",             logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" },
-    { name: "Claude",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/anthropic.svg" },
-    { name: "Meta Business Suite", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" },
-    { name: "Meta Insights",       logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" },
-    { name: "Google Analytics",    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg" },
-    { name: "Gmail",               logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" },
-    { name: "Zoom",                logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zoom.svg" },
-    { name: "Buffer",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/buffer.svg" },
-    { name: "CapCut",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/capcut.svg" },
-    { name: "Lightroom",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobelightroom.svg" },
-    { name: "Loom",                logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/loom.svg" },
-    { name: "Linktree",            logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linktree.svg" },
-    { name: "Mailchimp",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mailchimp.svg" },
-    { name: "Google Meet",         logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlemeet.svg" },
-  ];
-
-  function buildRow(id) {
-    const container = document.getElementById(id);
-    if (!container) return;
-    tools.forEach((tool, i) => {
-      const item = document.createElement('div');
-      item.className = 'ora-tool-item';
-
-      const img = document.createElement('img');
-      img.src = tool.logo;
-      img.alt = tool.name;
-      img.onerror = () => { img.style.display = 'none'; };
-
-      const name = document.createElement('span');
-      name.textContent = tool.name;
-
-      item.appendChild(img);
-      item.appendChild(name);
-      container.appendChild(item);
-
-      if (i < tools.length - 1) {
-        const sep = document.createElement('span');
-        sep.className = 'ora-tool-sep';
-        sep.textContent = '✦';
-        container.appendChild(sep);
-      }
-    });
-  }
-
-  buildRow('ora-row1');
-  buildRow('ora-row2');
-})();
-</script>
-<!-- ✦ End Tools Marquee -->
- 
+<!-- ✦ END MARQUEE -->
 
 <div id="packages" class="full-section" style="background: var(--cream);">
   <div class="inner" style="max-width:1100px; margin:0 auto; padding:6rem 2rem;">
@@ -581,8 +511,6 @@
     </div>
 
     <div class="works-grid">
-
-      <!-- GRAPHICS: Lunévia -->
       <div class="work-card fade-in" data-category="graphics">
         <div class="work-item"><img src="Glunevia1.png" alt="Lunévia Collection Launch"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Lunévia — Collection Launch</div><div class="work-overlay-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Lunévia — Collection Launch</div><div class="work-caption-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div>
@@ -599,8 +527,6 @@
         <div class="work-item"><img src="Glunevia4.png" alt="Lunévia Radiance & Grace"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Lunévia — Radiance & Grace</div><div class="work-overlay-desc">Lifestyle content strategy connecting the brand to real, everyday moments.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Lunévia — Radiance & Grace</div><div class="work-caption-desc">Lifestyle content strategy connecting the brand to real, everyday moments.</div></div>
       </div>
-
-      <!-- GRAPHICS: Liliya -->
       <div class="work-card fade-in" data-category="graphics">
         <div class="work-item"><img src="Liliya1.png" alt="Liliya 1"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Liliya Personalised Jewels</div><div class="work-overlay-desc">Elegant graphics designed to showcase personalised jewelry and drive product engagement.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Liliya Personalised Jewels</div><div class="work-caption-desc">Elegant graphics to showcase personalised jewelry.</div></div>
@@ -625,8 +551,6 @@
         <div class="work-item"><img src="Liliya6.png" alt="Liliya 6"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Liliya Personalised Jewels</div><div class="work-overlay-desc">Elegant graphics designed to showcase personalised jewelry and drive product engagement.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Liliya Personalised Jewels</div><div class="work-caption-desc">Elegant graphics to showcase personalised jewelry.</div></div>
       </div>
-
-      <!-- GRAPHICS: Finance -->
       <div class="work-card fade-in" data-category="graphics">
         <div class="work-item"><img src="Finance1.png" alt="Finance 1"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Financial Origins — Editorial</div><div class="work-overlay-desc">Educational content designed to make complex financial history visually compelling and shareable.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Financial Origins — Editorial</div><div class="work-caption-desc">Making complex financial history visually compelling.</div></div>
@@ -639,8 +563,6 @@
         <div class="work-item"><img src="Finance3.png" alt="Finance 3"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Financial Origins — Editorial</div><div class="work-overlay-desc">Educational content designed to make complex financial history visually compelling and shareable.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Financial Origins — Editorial</div><div class="work-caption-desc">Making complex financial history visually compelling.</div></div>
       </div>
-
-      <!-- CAROUSEL -->
       <div class="work-card fade-in" data-category="carousel">
         <a href="https://www.instagram.com/p/DX9ZSLOEuIr/" target="_blank" class="reel-thumb-link">
           <div class="work-item reel-thumb">
@@ -652,8 +574,6 @@
         </a>
         <div class="work-caption"><div class="work-caption-title">OraSocial — Carousel Post</div><div class="work-caption-desc">Strategic carousel content to educate and grow organic reach on Instagram.</div></div>
       </div>
-
-      <!-- BRANDING -->
       <div class="work-card fade-in" data-category="branding">
         <div class="work-item reel-thumb" onclick="openFlipbook()" style="cursor:pointer;">
           <img src="Amarmenu1.png" alt="Amar Coffee Co. Menu">
@@ -663,8 +583,6 @@
         </div>
         <div class="work-caption"><div class="work-caption-title">Amar Coffee Co. — Brand Menu</div><div class="work-caption-desc">A full 6-page digital menu. Tap to browse all pages.</div></div>
       </div>
-
-      <!-- REELS -->
       <div class="work-card fade-in" data-category="reels">
         <a href="https://youtube.com/shorts/5RN-wIeJGEI" target="_blank" class="reel-thumb-link">
           <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
@@ -705,18 +623,14 @@
           </div>
         </a>
       </div>
-
     </div>
 
-    <!-- Unified Load More Button -->
     <div class="load-more-wrap" id="works-load-more" style="display:none;">
       <button class="load-more-btn" onclick="loadMoreWorks()">Load More ↓</button>
     </div>
-
   </section>
 </div>
 
-<!-- FLIPBOOK MODAL -->
 <div id="flipbook-modal" onclick="closeFlipbook(event)">
   <div style="position:relative; max-width:480px; width:100%; background:#fff; border-radius:16px; overflow:hidden;">
     <button onclick="closeFlipbook()" style="position:absolute; top:0.75rem; right:0.75rem; background:rgba(0,0,0,0.5); border:none; color:white; width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:1rem; z-index:10;">✕</button>
@@ -866,7 +780,6 @@
     growth:  { name: 'Growth',  price: '$799/month', desc: 'For brands ready to grow and engage their audience.',          features: ['15 strategic posts per month','Content calendar (planned monthly)','Caption + hashtag strategy','Custom-designed visuals','2 revisions per post','Monthly performance check-in','Content campaign execution','1–2 platforms (IG & FB or LI)'], ideal: 'Designed to increase engagement and build a stronger brand presence.' },
     premium: { name: 'Premium', price: '$1,199/month', desc: 'For brands that want full social media support and strategy.', features: ['20–25 high-quality posts per month','Full content strategy & direction','Advanced visual design system','Campaign planning & execution','Content calendar + captions + hashtags','Priority revisions & support','Monthly performance insights','2–3 platforms (IG, FB, or LI)'], ideal: 'A complete solution for brands ready to scale and stand out.' }
   };
-
   function openModal(pkg) {
     const p = packages[pkg];
     document.getElementById('modal-content').innerHTML = `<h3>${p.name}</h3><div class="modal-price">${p.price}</div><div class="modal-desc">${p.desc}</div><ul>${p.features.map(f=>`<li>${f}</li>`).join('')}</ul><p style="font-size:0.82rem;font-style:italic;color:var(--ink-muted);">✦ ${p.ideal}</p>`;
@@ -886,10 +799,9 @@
 
   // ── Works: filter + load more ──
   const INITIAL_COUNT = 3;
-  const LOAD_BATCH    = 3;
-  let currentCards  = [];   // ordered list for the active filter
+  const LOAD_BATCH = 3;
+  let currentCards = [];
   let currentLoaded = 0;
-
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -897,62 +809,93 @@
     }
     return arr;
   }
-
   function filterWorks(category, btn) {
-    // Update active button
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
-
     const allCards = Array.from(document.querySelectorAll('.work-card'));
-
-    // Hide everything first
     allCards.forEach(c => c.classList.add('hidden'));
-
-    // Pick relevant cards — shuffle for "All" so visitors see a variety
-    let relevant;
-    if (category === 'all') {
-      relevant = shuffleArray([...allCards]);
-    } else {
-      relevant = allCards.filter(c => c.dataset.category === category);
-    }
-
-    // Show first batch
+    let relevant = category === 'all' ? shuffleArray([...allCards]) : allCards.filter(c => c.dataset.category === category);
     const toShow = Math.min(INITIAL_COUNT, relevant.length);
     relevant.slice(0, toShow).forEach(c => c.classList.remove('hidden'));
-
-    currentCards  = relevant;
+    currentCards = relevant;
     currentLoaded = toShow;
-
-    // Toggle load-more button
-    const btn2 = document.getElementById('works-load-more');
-    btn2.style.display = relevant.length > INITIAL_COUNT ? 'block' : 'none';
+    document.getElementById('works-load-more').style.display = relevant.length > INITIAL_COUNT ? 'block' : 'none';
   }
-
   function loadMoreWorks() {
     const next = currentCards.slice(currentLoaded, currentLoaded + LOAD_BATCH);
     next.forEach(c => c.classList.remove('hidden'));
     currentLoaded += next.length;
-
-    if (currentLoaded >= currentCards.length) {
-      document.getElementById('works-load-more').style.display = 'none';
-    }
+    if (currentLoaded >= currentCards.length) document.getElementById('works-load-more').style.display = 'none';
   }
-
-  // Initialise on load — show 3 random items in "All"
   document.addEventListener('DOMContentLoaded', () => {
     filterWorks('all', document.querySelector('.filter-btn.active'));
   });
 
   // ── Contact form ──
   function handleSubmit() {
-    var name    = document.getElementById('nameInput').value.trim();
-    var email   = document.getElementById('emailInput').value.trim();
+    var name = document.getElementById('nameInput').value.trim();
+    var email = document.getElementById('emailInput').value.trim();
     var service = document.getElementById('serviceInput').value;
     if (!name || !email || !service) { alert('Please fill in your name, email, and select a service.'); return; }
     window.open('https://forms.gle/oYc77XufwQ2epErb7', '_blank');
     document.getElementById('contactForm').style.display = 'none';
     document.getElementById('thankYou').classList.add('visible');
   }
+
+  // ── Tools Marquee ──
+  (function () {
+    const tools = [
+      { name: "GitHub",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" },
+      { name: "Canva",               logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/canva.svg" },
+      { name: "Fibery",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fibery.svg" },
+      { name: "Notion",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/notion.svg" },
+      { name: "Slack",               logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/slack.svg" },
+      { name: "Shopify",             logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shopify.svg" },
+      { name: "WordPress",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wordpress.svg" },
+      { name: "Google Workspace",    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/google.svg" },
+      { name: "ChatGPT",             logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" },
+      { name: "Claude",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/anthropic.svg" },
+      { name: "Meta Business Suite", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" },
+      { name: "Meta Insights",       logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" },
+      { name: "Google Analytics",    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg" },
+      { name: "Gmail",               logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" },
+      { name: "Zoom",                logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zoom.svg" },
+      { name: "Buffer",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/buffer.svg" },
+      { name: "CapCut",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/capcut.svg" },
+      { name: "Lightroom",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobelightroom.svg" },
+      { name: "Loom",                logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/loom.svg" },
+      { name: "Linktree",            logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linktree.svg" },
+      { name: "Mailchimp",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mailchimp.svg" },
+      { name: "Google Meet",         logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlemeet.svg" },
+    ];
+
+    function buildItems(container) {
+      tools.forEach((tool) => {
+        const item = document.createElement('div');
+        item.className = 'ora-tool-item';
+        const img = document.createElement('img');
+        img.src = tool.logo;
+        img.alt = tool.name;
+        img.onerror = () => { img.style.display = 'none'; };
+        const name = document.createElement('span');
+        name.textContent = tool.name;
+        item.appendChild(img);
+        item.appendChild(name);
+        container.appendChild(item);
+        const sep = document.createElement('span');
+        sep.className = 'ora-tool-sep';
+        sep.textContent = '✦';
+        container.appendChild(sep);
+      });
+    }
+
+    const row = document.getElementById('ora-row1');
+    if (row) {
+      // Build twice — translateX(-50%) loops back seamlessly, no jump
+      buildItems(row);
+      buildItems(row);
+    }
+  })();
 </script>
 </body>
 </html>
