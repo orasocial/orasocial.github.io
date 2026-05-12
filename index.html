@@ -367,6 +367,157 @@
     </div>
   </div>
 </section>
+<!-- ✦ OraSocial — Tools Marquee Section -->
+<!-- Paste this RIGHT AFTER the closing </section> of your Services section -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&display=swap" rel="stylesheet">
+
+<section class="ora-tools-section">
+  <p class="ora-tools-label">Tools I Work With</p>
+  <div class="ora-marquee-wrap">
+    <div class="ora-marquee-track">
+      <div class="ora-marquee-inner" id="ora-row1"></div>
+      <div class="ora-marquee-inner" id="ora-row2"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+.ora-tools-section {
+  width: 100%;
+  overflow: hidden;
+  padding: 48px 0 0;
+  background: transparent;
+}
+
+.ora-tools-label {
+  text-align: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #c8937a;
+  margin-bottom: 18px;
+}
+
+.ora-marquee-wrap {
+  overflow: hidden;
+  width: 100%;
+  padding: 18px 0;
+  border-top: 1px solid rgba(200, 147, 122, 0.2);
+  border-bottom: 1px solid rgba(200, 147, 122, 0.2);
+}
+
+.ora-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: ora-scroll-tools 40s linear infinite;
+}
+
+.ora-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.ora-marquee-inner {
+  display: flex;
+  align-items: center;
+}
+
+.ora-tool-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 28px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #7a4a38;
+  white-space: nowrap;
+}
+
+.ora-tool-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.75;
+}
+
+.ora-tool-sep {
+  font-size: 8px;
+  color: #d4a090;
+}
+
+@keyframes ora-scroll-tools {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+<script>
+(function () {
+  const tools = [
+    { name: "GitHub",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" },
+    { name: "Canva",               logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/canva.svg" },
+    { name: "Fibery",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/fibery.svg" },
+    { name: "Notion",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/notion.svg" },
+    { name: "Slack",               logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/slack.svg" },
+    { name: "Shopify",             logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/shopify.svg" },
+    { name: "WordPress",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/wordpress.svg" },
+    { name: "Google Workspace",    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/google.svg" },
+    { name: "ChatGPT",             logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/openai.svg" },
+    { name: "Claude",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/anthropic.svg" },
+    { name: "Meta Business Suite", logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" },
+    { name: "Meta Insights",       logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/meta.svg" },
+    { name: "Google Analytics",    logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googleanalytics.svg" },
+    { name: "Gmail",               logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" },
+    { name: "Zoom",                logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/zoom.svg" },
+    { name: "Buffer",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/buffer.svg" },
+    { name: "CapCut",              logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/capcut.svg" },
+    { name: "Lightroom",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/adobelightroom.svg" },
+    { name: "Loom",                logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/loom.svg" },
+    { name: "Linktree",            logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linktree.svg" },
+    { name: "Mailchimp",           logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/mailchimp.svg" },
+    { name: "Google Meet",         logo: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/googlemeet.svg" },
+  ];
+
+  function buildRow(id) {
+    const container = document.getElementById(id);
+    if (!container) return;
+    tools.forEach((tool, i) => {
+      const item = document.createElement('div');
+      item.className = 'ora-tool-item';
+
+      const img = document.createElement('img');
+      img.src = tool.logo;
+      img.alt = tool.name;
+      img.onerror = () => { img.style.display = 'none'; };
+
+      const name = document.createElement('span');
+      name.textContent = tool.name;
+
+      item.appendChild(img);
+      item.appendChild(name);
+      container.appendChild(item);
+
+      if (i < tools.length - 1) {
+        const sep = document.createElement('span');
+        sep.className = 'ora-tool-sep';
+        sep.textContent = '✦';
+        container.appendChild(sep);
+      }
+    });
+  }
+
+  buildRow('ora-row1');
+  buildRow('ora-row2');
+})();
+</script>
+<!-- ✦ End Tools Marquee -->
+ 
 
 <div id="packages" class="full-section" style="background: var(--cream);">
   <div class="inner" style="max-width:1100px; margin:0 auto; padding:6rem 2rem;">
