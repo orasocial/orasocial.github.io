@@ -189,13 +189,13 @@
   .about-header { margin-bottom: 1.75rem; }
   .about-eyebrow-name { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
   .about-roles { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta); }
- .about-photo-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: stretch; margin-bottom: 2rem; }
+.about-photo-row { display: grid; grid-template-columns: 340px 1fr; gap: 3rem; align-items: start; margin-bottom: 2rem; }
   @media (max-width: 700px) { .about-photo-row { grid-template-columns: 1fr; gap: 1.5rem; } .nav-links { display: none; } .hero-deco { display: none !important; } }
   .about-img-wrap { position: relative; }
   .about-img-deco { position: absolute; bottom: -16px; right: -16px; width: 60%; aspect-ratio: 1; border: 2px solid var(--terracotta); border-radius: 16px; opacity: 0.25; z-index: -1; }
   .about-intro-col { display: flex; flex-direction: column; justify-content: flex-start; }
   .about-i-see-you { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; font-style: italic; color: var(--ink); margin-bottom: 1rem; }
-  .about-intro-col p { font-size: 0.975rem; color: var(--ink-mid); font-weight: 300; margin-bottom: 1.1rem; line-height: 1.85; }
+  .about-intro-col p { font-size: 0.975rem; color: var(--ink-mid); font-weight: 300; margin-bottom: 1.1rem; line-height: 1.85; text-align: justify; }
   .about-bottom { }
   .about-bottom p { font-size: 0.975rem; color: var(--ink-mid); font-weight: 300; margin-bottom: 1.1rem; line-height: 1.85; }
   .about-brings { margin: 0 0 1.5rem; padding: 1.5rem; background: var(--warm-white); border: 1px solid var(--border); border-radius: 14px; }
@@ -668,7 +668,7 @@
   <!-- Middle: photo left, intro text right, same height -->
   <div class="about-photo-row">
     <div class="about-img-wrap fade-in" style="min-height:100%;">
-  <img src="mary-photo.png" alt="Mary - OraSocial" style="width:100%; height:100%; aspect-ratio:unset; object-fit:cover; object-position:top; border-radius:20px; display:block;">
+  <img src="mary-photo.png" alt="Mary - OraSocial" style="width:85%; height:100%; aspect-ratio:unset; object-fit:cover; object-position:top; border-radius:20px; display:block;">
       <div class="about-img-deco"></div>
     </div>
     <div class="about-intro-col fade-in">
