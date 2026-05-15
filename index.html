@@ -167,6 +167,33 @@
   .reel-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; background: rgba(255,255,255,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--terracotta); transition: transform 0.2s, background 0.2s; pointer-events: none; }
   .reel-thumb:hover .reel-play-btn { transform: translate(-50%, -50%) scale(1.12); background: white; }
 
+  /* ── Pinned Instagram Reel ── */
+  .pinned-reel-wrap {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0 0.5rem;
+  }
+  .pinned-reel-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #E1306C;
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+  .pinned-reel-embed {
+    width: 100%;
+    max-width: 480px;
+  }
+
   #flipbook-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem; }
   #flipbook-modal.active { display: flex; }
 
@@ -525,6 +552,28 @@
     </div>
 
     <div class="works-grid">
+
+      <!-- ✦ PINNED INSTAGRAM REEL — Featured first in Reels section -->
+      <div class="work-card fade-in" data-category="reels">
+        <div class="pinned-reel-wrap">
+          <div class="pinned-reel-badge">
+            📌 Featured Reel
+          </div>
+          <div class="pinned-reel-embed">
+            <blockquote class="instagram-media" data-instgrm-captioned
+              data-instgrm-permalink="https://www.instagram.com/reel/DYXHxjoS3zI/?utm_source=ig_embed&utm_campaign=loading"
+              data-instgrm-version="14"
+              style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; padding:0; width:100%;">
+            </blockquote>
+          </div>
+        </div>
+        <div class="work-caption">
+          <div class="work-caption-title">OraSocial — Featured Reel</div>
+          <div class="work-caption-desc">Our latest pinned reel on Instagram.</div>
+        </div>
+      </div>
+      <!-- ✦ END PINNED REEL -->
+
       <div class="work-card fade-in" data-category="graphics">
         <div class="work-item"><img src="Glunevia1.png" alt="Lunévia Collection Launch"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Lunévia — Collection Launch</div><div class="work-overlay-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Lunévia — Collection Launch</div><div class="work-caption-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div>
@@ -669,14 +718,12 @@
 </div>
 
 <section id="about">
-  <!-- Top: name + roles above everything -->
   <div class="about-header fade-in">
     <div class="section-label">About Me</div>
     <div class="about-eyebrow-name">Hi, I'm Mary 👋</div>
     <div class="about-roles">Social Media Strategist • Content Creator • Brand Builder</div>
   </div>
 
-  <!-- Middle: photo left, intro text right, same height -->
   <div class="about-photo-row">
     <div class="about-img-wrap fade-in" style="min-height:100%;">
   <img src="mary-photo.png" alt="Mary - OraSocial" style="width:85%; height:100%; aspect-ratio:unset; object-fit:cover; object-position:top; border-radius:20px; display:block;">
@@ -690,7 +737,6 @@
 </div>
   </div>
 
-  <!-- Bottom: brings box + help list + tagline + button -->
   <div class="about-bottom fade-in">
     <div class="about-brings">
       <div class="about-brings-title">With 4+ years of experience, here's what I bring:</div>
@@ -802,6 +848,9 @@
   <p>© 2026 OraSocial — <a href="mailto:orasocialsmm@gmail.com">orasocialsmm@gmail.com</a></p>
 </footer>
 
+<!-- Instagram embed script (one instance, at the bottom) -->
+<script async src="//www.instagram.com/embed.js"></script>
+
 <script>
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
@@ -846,17 +895,25 @@
     const allCards = Array.from(document.querySelectorAll('.work-card'));
     allCards.forEach(c => c.classList.add('hidden'));
     let relevant = category === 'all' ? shuffleArray([...allCards]) : allCards.filter(c => c.dataset.category === category);
+    // Always show pinned reel first if filtering reels or all
+    const pinnedReel = allCards.find(c => c.querySelector('.pinned-reel-wrap'));
+    if (pinnedReel && (category === 'all' || category === 'reels')) {
+      relevant = [pinnedReel, ...relevant.filter(c => c !== pinnedReel)];
+    }
     const toShow = Math.min(INITIAL_COUNT, relevant.length);
     relevant.slice(0, toShow).forEach(c => c.classList.remove('hidden'));
     currentCards = relevant;
     currentLoaded = toShow;
     document.getElementById('works-load-more').style.display = relevant.length > INITIAL_COUNT ? 'block' : 'none';
+    // Re-process Instagram embeds if they've been hidden/shown
+    if (window.instgrm) window.instgrm.Embeds.process();
   }
   function loadMoreWorks() {
     const next = currentCards.slice(currentLoaded, currentLoaded + LOAD_BATCH);
     next.forEach(c => c.classList.remove('hidden'));
     currentLoaded += next.length;
     if (currentLoaded >= currentCards.length) document.getElementById('works-load-more').style.display = 'none';
+    if (window.instgrm) window.instgrm.Embeds.process();
   }
   document.addEventListener('DOMContentLoaded', () => {
     filterWorks('all', document.querySelector('.filter-btn.active'));
