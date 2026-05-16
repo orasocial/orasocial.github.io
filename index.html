@@ -167,32 +167,7 @@
   .reel-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; background: rgba(255,255,255,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--terracotta); transition: transform 0.2s, background 0.2s; pointer-events: none; }
   .reel-thumb:hover .reel-play-btn { transform: translate(-50%, -50%) scale(1.12); background: white; }
 
-  /* ── Pinned Instagram Reel ── */
-  .pinned-reel-wrap {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 0 0.5rem;
-  }
-  .pinned-reel-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #E1306C;
-    color: white;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 100px;
-    margin-bottom: 12px;
-  }
-  .pinned-reel-embed {
-    width: 100%;
-    max-width: 480px;
-  }
+
 
   #flipbook-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem; }
   #flipbook-modal.active { display: flex; }
