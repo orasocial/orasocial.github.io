@@ -384,6 +384,12 @@
     100% { transform: translateX(-50%); }
   }
 .about-img-wrap { position: relative; display: flex; flex-direction: column; }
+ /* Hide Instagram embed caption */
+.instagram-media ~ p,
+.instagram-media + p,
+blockquote.instagram-media p {
+  display: none;
+}
 </style>
 </head>
 <body>
