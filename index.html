@@ -195,6 +195,11 @@
   .reel-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; background: rgba(255,255,255,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--terracotta); transition: transform 0.2s, background 0.2s; pointer-events: none; }
   .reel-thumb:hover .reel-play-btn { transform: translate(-50%, -50%) scale(1.12); background: white; }
 
+  /* Instagram reel placeholder */
+  .ig-reel-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, #1a1410 0%, #2d1f17 50%, #1a1410 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; }
+  .ig-reel-placeholder svg { opacity: 0.35; }
+  .ig-reel-placeholder span { font-size: 0.75rem; color: rgba(255,255,255,0.35); font-family: var(--font-body); letter-spacing: 0.06em; text-transform: uppercase; }
+
   #flipbook-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; padding: 1.5rem; }
   #flipbook-modal.active { display: flex; }
 
@@ -504,6 +509,7 @@
 
     <div class="works-grid">
 
+      <!-- GRAPHICS -->
       <div class="work-card fade-in" data-category="graphics">
         <div class="work-item"><img src="Glunevia1.png" alt="Social media graphic for Lunévia jewelry collection launch — designed by OraSocial" loading="lazy"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Lunévia — Collection Launch</div><div class="work-overlay-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Lunévia — Collection Launch</div><div class="work-caption-desc">Product showcase designed to drive discovery and spark purchase intent.</div></div>
@@ -556,6 +562,8 @@
         <div class="work-item"><img src="Finance3.png" alt="Shareable educational social media post for Financial Origins — designed by OraSocial" loading="lazy"><div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">Financial Origins — Editorial</div><div class="work-overlay-desc">Educational content designed to make complex financial history visually compelling and shareable.</div></div></div><div class="work-badge">Graphics</div></div>
         <div class="work-caption"><div class="work-caption-title">Financial Origins — Editorial</div><div class="work-caption-desc">Making complex financial history visually compelling.</div></div>
       </div>
+
+      <!-- CAROUSELS (existing) -->
       <div class="work-card fade-in" data-category="carousel">
         <a href="https://www.instagram.com/p/DX9ZSLOEuIr/" target="_blank" class="reel-thumb-link">
           <div class="work-item reel-thumb">
@@ -578,6 +586,38 @@
         </a>
         <div class="work-caption"><div class="work-caption-title">OraSocial — Carousel Post</div><div class="work-caption-desc">Strategic carousel content to educate and grow organic reach on Instagram.</div></div>
       </div>
+
+      <!-- CAROUSELS (new) -->
+      <div class="work-card fade-in" data-category="carousel">
+        <a href="https://www.instagram.com/p/DYj9GUUkkEG/" target="_blank" class="reel-thumb-link">
+          <div class="work-item reel-thumb">
+            <div class="ig-reel-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <span>View on Instagram</span>
+            </div>
+            <div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">OraSocial — Carousel Post</div><div class="work-overlay-desc">Strategic carousel content designed to educate, engage, and grow organic reach on Instagram.</div></div></div>
+            <div class="carousel-icon">⧉</div>
+            <div class="work-badge">Carousel</div>
+          </div>
+        </a>
+        <div class="work-caption"><div class="work-caption-title">OraSocial — Carousel Post</div><div class="work-caption-desc">Strategic carousel content to educate and grow organic reach on Instagram.</div></div>
+      </div>
+      <div class="work-card fade-in" data-category="carousel">
+        <a href="https://www.instagram.com/p/DY9wG_LkmB7/" target="_blank" class="reel-thumb-link">
+          <div class="work-item reel-thumb">
+            <div class="ig-reel-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <span>View on Instagram</span>
+            </div>
+            <div class="work-overlay"><div class="work-overlay-content"><div class="work-overlay-title">OraSocial — Carousel Post</div><div class="work-overlay-desc">Strategic carousel content designed to educate, engage, and grow organic reach on Instagram.</div></div></div>
+            <div class="carousel-icon">⧉</div>
+            <div class="work-badge">Carousel</div>
+          </div>
+        </a>
+        <div class="work-caption"><div class="work-caption-title">OraSocial — Carousel Post</div><div class="work-caption-desc">Strategic carousel content to educate and grow organic reach on Instagram.</div></div>
+      </div>
+
+      <!-- BRANDING -->
       <div class="work-card fade-in" data-category="branding">
         <div class="work-item reel-thumb" onclick="openFlipbook()" style="cursor:pointer;">
           <img src="Amarmenu1.png" alt="Amar Coffee Co. brand menu cover — 6-page digital menu design by OraSocial" loading="lazy">
@@ -587,6 +627,8 @@
         </div>
         <div class="work-caption"><div class="work-caption-title">Amar Coffee Co. — Brand Menu</div><div class="work-caption-desc">A full 6-page digital menu. Tap to browse all pages.</div></div>
       </div>
+
+      <!-- REELS (existing) -->
       <div class="work-card fade-in" data-category="reels">
         <a href="https://youtube.com/shorts/5RN-wIeJGEI" target="_blank" class="reel-thumb-link">
           <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
@@ -627,6 +669,33 @@
           </div>
         </a>
       </div>
+
+      <!-- REELS (new Instagram) -->
+      <div class="work-card fade-in" data-category="reels">
+        <a href="https://www.instagram.com/reel/DZFhN16yqjk/" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <div class="ig-reel-placeholder" style="aspect-ratio:9/16;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <span>Watch on Instagram</span>
+            </div>
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
+          </div>
+        </a>
+      </div>
+      <div class="work-card fade-in" data-category="reels">
+        <a href="https://www.instagram.com/reel/DYXHxjoS3zI/" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <div class="ig-reel-placeholder" style="aspect-ratio:9/16;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <span>Watch on Instagram</span>
+            </div>
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
+          </div>
+        </a>
+      </div>
+
     </div>
 
     <div class="load-more-wrap" id="works-load-more" style="display:none;">
