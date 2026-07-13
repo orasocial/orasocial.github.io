@@ -690,6 +690,38 @@
         </a>
       </div>
 
+      <!-- REELS (pinned 3-part series) -->
+      <div class="work-card fade-in" data-category="reels" data-pinned="true">
+        <a href="https://www.instagram.com/reel/DZuvzCZyV42/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <img src="part-1.png" alt="OraSocial 3-part reel series — Part 1, short-form video content" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
+          </div>
+        </a>
+        <div class="work-caption"><div class="work-caption-title">3-Part Reel Series — Part 1</div><div class="work-caption-desc">Short-form video content, part 1 of 3.</div></div>
+      </div>
+      <div class="work-card fade-in" data-category="reels" data-pinned="true">
+        <a href="https://www.instagram.com/reel/DZ48Q5CSu1I/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <img src="part-2.png" alt="OraSocial 3-part reel series — Part 2, short-form video content" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
+          </div>
+        </a>
+        <div class="work-caption"><div class="work-caption-title">3-Part Reel Series — Part 2</div><div class="work-caption-desc">Short-form video content, part 2 of 3.</div></div>
+      </div>
+      <div class="work-card fade-in" data-category="reels" data-pinned="true">
+        <a href="https://www.instagram.com/reel/DavGCYoyDgh/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="reel-thumb-link">
+          <div class="work-item reels-card reel-thumb" style="aspect-ratio:9/16; height:auto;">
+            <img src="part-3.png" alt="OraSocial 3-part reel series — Part 3, short-form video content" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+            <div class="reel-play-btn">▶</div>
+            <div class="work-badge">Reels</div>
+          </div>
+        </a>
+        <div class="work-caption"><div class="work-caption-title">3-Part Reel Series — Part 3</div><div class="work-caption-desc">Short-form video content, part 3 of 3.</div></div>
+      </div>
+
     </div>
 
     <div class="load-more-wrap" id="works-load-more" style="display:none;">
@@ -884,7 +916,14 @@
     if (btn) btn.classList.add('active');
     const allCards = Array.from(document.querySelectorAll('.work-card'));
     allCards.forEach(c => c.classList.add('hidden'));
-    let relevant = category === 'all' ? shuffleArray([...allCards]) : allCards.filter(c => c.dataset.category === category);
+    let relevant;
+    if (category === 'all') {
+      const pinned = allCards.filter(c => c.dataset.pinned === 'true');
+      const unpinned = shuffleArray(allCards.filter(c => c.dataset.pinned !== 'true'));
+      relevant = [...pinned, ...unpinned];
+    } else {
+      relevant = allCards.filter(c => c.dataset.category === category);
+    }
     const toShow = Math.min(INITIAL_COUNT, relevant.length);
     relevant.slice(0, toShow).forEach(c => c.classList.remove('hidden'));
     currentCards = relevant;
